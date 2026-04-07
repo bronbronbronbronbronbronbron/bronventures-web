@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Speaking Section Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:500}
+a{color:inherit;text-decoration:none}
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+.sh-sub{font-size:14px;color:#55555f;-webkit-text-fill-color:#55555f;margin-top:12px;line-height:1.6}
+.tag{display:inline-block;background:#2563eb;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:6px;margin-bottom:24px;letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 20%,rgba(255,255,255,.06) 80%,transparent);margin:80px 0}
+
+/* ═══ OPTION A: Selected highlights with venue strip ═══ */
+.speak-a{padding:100px 0}
+.speak-highlights{display:flex;flex-direction:column;gap:2px;margin-bottom:40px}
+.speak-hl{background:#0a0a0c;border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:28px 32px;display:grid;grid-template-columns:48px 1fr auto;gap:20px;align-items:center;transition:border-color .3s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1)}
+.speak-hl:hover{border-color:rgba(255,255,255,.08);transform:translateY(-2px)}
+@media(max-width:734px){.speak-hl{grid-template-columns:1fr;gap:8px;padding:20px 24px}}
+.speak-hl-year{font-size:13px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:.5px}
+.speak-hl-title{font-size:16px;font-weight:700;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;letter-spacing:-.01em}
+.speak-hl-venue{font-size:11px;font-weight:700;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:1px;text-transform:uppercase;white-space:nowrap}
+/* Venue strip */
+.venue-strip{display:flex;align-items:center;justify-content:center;gap:32px;flex-wrap:wrap;padding:20px 0;border-top:1px solid rgba(255,255,255,.04)}
+.venue-strip span{font-size:11px;font-weight:700;color:#2a2a2e;-webkit-text-fill-color:#2a2a2e;letter-spacing:1.5px;text-transform:uppercase}
+@media(max-width:734px){.venue-strip{gap:16px 24px}.venue-strip span{font-size:10px}}
+
+/* ═══ OPTION B: Minimal list + stat ═══ */
+.speak-b{padding:100px 0}
+.speak-stat{display:flex;align-items:baseline;gap:12px;margin-bottom:48px}
+.speak-stat-num{font-size:clamp(48px,6vw,72px);font-weight:900;letter-spacing:-.06em;color:#2563eb;-webkit-text-fill-color:#2563eb;line-height:1}
+.speak-stat-label{font-size:14px;font-weight:600;color:#55555f;-webkit-text-fill-color:#55555f}
+.speak-list{display:flex;flex-direction:column}
+.speak-li{display:flex;align-items:baseline;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:all .4s cubic-bezier(.22,1,.36,1)}
+.speak-li:first-child{border-top:1px solid rgba(255,255,255,.04)}
+.speak-li-left{display:flex;align-items:baseline;gap:16px}
+.speak-li-year{font-size:12px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;flex-shrink:0;width:36px}
+.speak-li-title{font-size:16px;font-weight:700;color:#86868b;-webkit-text-fill-color:#86868b;letter-spacing:-.02em;transition:color .4s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .4s cubic-bezier(.22,1,.36,1)}
+.speak-li:hover .speak-li-title{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+.speak-li-venue{font-size:11px;font-weight:600;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:.5px;text-transform:uppercase;flex-shrink:0;margin-left:20px;transition:color .4s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .4s cubic-bezier(.22,1,.36,1)}
+.speak-li:hover .speak-li-venue{color:#2563eb;-webkit-text-fill-color:#2563eb}
+.speak-more{font-size:12px;font-weight:600;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;padding-top:16px;font-style:italic}
+@media(max-width:580px){.speak-li{flex-direction:column;gap:4px;align-items:flex-start}.speak-li-venue{margin-left:0}}
+
+/* ═══ OPTION C: Grid + inquiry CTA ═══ */
+.speak-c{padding:100px 0}
+.speak-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:32px}
+@media(max-width:900px){.speak-grid{grid-template-columns:1fr}}
+.speak-card{background:#0a0a0c;border-radius:18px;padding:32px;border:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;min-height:180px;transition:border-color .3s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.speak-card:hover{border-color:rgba(255,255,255,.08);transform:translateY(-3px)}
+.speak-card-year{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:2px;text-transform:uppercase;margin-bottom:auto}
+.speak-card h4{font-size:17px;font-weight:800;letter-spacing:-.02em;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7;margin-bottom:8px;margin-top:20px}
+.speak-card p{font-size:12px;color:#55555f;-webkit-text-fill-color:#55555f;line-height:1.6;margin-bottom:12px}
+.speak-card-venue{font-size:10px;font-weight:700;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:1.5px;text-transform:uppercase}
+.speak-cta{text-align:center;padding-top:16px}
+.speak-cta-text{font-size:13px;color:#55555f;-webkit-text-fill-color:#55555f}
+.speak-cta-text a{color:#2563eb;-webkit-text-fill-color:#2563eb;font-weight:700;transition:opacity .3s}
+.speak-cta-text a:hover{opacity:.7}
+
+.btn-p{background:linear-gradient(135deg,#2563eb,#6366f1);color:#fff;-webkit-text-fill-color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-flex;align-items:center;gap:8px}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.3)}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION A - Highlights + Venue Strip</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="speak-a">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Speaking</div>
+<div class="sh-title">On stage<span class="dim">.</span></div>
+<div class="sh-sub">Select appearances. Panels, keynotes, and industry events.</div>
+</div>
+<div class="speak-highlights">
+
+<div class="speak-hl">
+<div class="speak-hl-year">2024</div>
+<div class="speak-hl-title">DeLorean and the Future of Mobility</div>
+<div class="speak-hl-venue">LA Convention Center</div>
+</div>
+
+<div class="speak-hl">
+<div class="speak-hl-year">2023</div>
+<div class="speak-hl-title">NFTs, Digital Assets, and the Law</div>
+<div class="speak-hl-venue">Javits Center, NYC</div>
+</div>
+
+<div class="speak-hl">
+<div class="speak-hl-year">2022</div>
+<div class="speak-hl-title">Luxury Operations in the Digital Age</div>
+<div class="speak-hl-venue">Javits Center, NYC</div>
+</div>
+
+</div>
+
+<div class="venue-strip">
+<span>Javits Center</span>
+<span>LA Convention Center</span>
+<span>Industry Conferences</span>
+<span>Private Events</span>
+</div>
+</div>
+</section>
+
+<div class="w"><div class="divider"></div></div>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION B - Minimal List + Stat + "and more"</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="speak-b">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Speaking</div>
+<div class="sh-title">On stage<span class="dim">.</span></div>
+</div>
+
+<div class="speak-list">
+
+<div class="speak-li">
+<div class="speak-li-left">
+<span class="speak-li-year">2024</span>
+<span class="speak-li-title">DeLorean and the Future of Mobility</span>
+</div>
+<span class="speak-li-venue">LA Convention Center</span>
+</div>
+
+<div class="speak-li">
+<div class="speak-li-left">
+<span class="speak-li-year">2023</span>
+<span class="speak-li-title">NFTs, Digital Assets, and the Law</span>
+</div>
+<span class="speak-li-venue">Javits Center, NYC</span>
+</div>
+
+<div class="speak-li">
+<div class="speak-li-left">
+<span class="speak-li-year">2022</span>
+<span class="speak-li-title">Luxury Operations in the Digital Age</span>
+</div>
+<span class="speak-li-venue">Javits Center, NYC</span>
+</div>
+
+</div>
+<div class="speak-more">+ additional industry panels, private events, and corporate engagements</div>
+</div>
+</section>
+
+<div class="w"><div class="divider"></div></div>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION C - Bento Cards + Speaking Inquiry CTA</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="speak-c">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Speaking</div>
+<div class="sh-title">On stage<span class="dim">.</span></div>
+<div class="sh-sub">Select appearances from conferences, panels, and industry events.</div>
+</div>
+<div class="speak-grid">
+
+<div class="speak-card">
+<div class="speak-card-year">2024</div>
+<h4>DeLorean and the Future of Mobility</h4>
+<p>Representing DeLorean Motor Company on next-gen automotive technology and brand revival.</p>
+<div class="speak-card-venue">LA Convention Center</div>
+</div>
+
+<div class="speak-card">
+<div class="speak-card-year">2023</div>
+<h4>NFTs, Digital Assets, and the Law</h4>
+<p>Legal panel on regulatory frameworks for digital assets, token classification, and compliance.</p>
+<div class="speak-card-venue">Javits Center, NYC</div>
+</div>
+
+<div class="speak-card">
+<div class="speak-card-year">2022</div>
+<h4>Luxury Operations in the Digital Age</h4>
+<p>Technology integration across production, retail, and wholesale for a global luxury house.</p>
+<div class="speak-card-venue">Javits Center, NYC</div>
+</div>
+
+</div>
+<div class="speak-cta">
+<div class="speak-cta-text">Interested in booking Daniel for a speaking engagement? <a href="https://cal.com/daniel-bron-lfpkai" target="_blank">Get in touch →</a></div>
+</div>
+</div>
+</section>
+
+</body>
+</html>

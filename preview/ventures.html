@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ventures Section - Perfected</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ VENTURES BENTO ═══ */
+.ventures{padding:100px 0}
+@media(max-width:734px){.ventures{padding:72px 0}}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:280px 220px;gap:6px}
+@media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}}
+@media(max-width:580px){.bento{grid-template-columns:1fr;grid-template-rows:auto}}
+
+/* ─── Base tile ─── */
+.bt{background:#0a0a0c;border-radius:18px;overflow:hidden;position:relative;display:flex;flex-direction:column;padding:28px;border:1px solid rgba(255,255,255,.04);transition:border-color .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1);cursor:pointer;text-decoration:none}
+.bt::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1);pointer-events:none;z-index:1;border-radius:18px}
+.bt:hover{border-color:rgba(255,255,255,.08);transform:translateY(-4px) scale(1.008);box-shadow:0 24px 64px rgba(0,0,0,.6)}
+.bt:hover::before{opacity:1}
+
+/* ─── Logo area: FIXED 40px height for row alignment, all top-left ─── */
+.bt-logo{position:relative;z-index:2;height:40px;display:flex;align-items:center;margin-bottom:auto}
+.bt-logo img{height:36px;width:auto;opacity:.55;transition:opacity .5s cubic-bezier(.22,1,.36,1),filter .5s cubic-bezier(.22,1,.36,1)}
+.bt:hover .bt-logo img{opacity:.9}
+.bt-logo-text{font-size:26px;font-weight:900;letter-spacing:-.04em;opacity:.55;transition:opacity .5s cubic-bezier(.22,1,.36,1);color:#f5f5f7;-webkit-text-fill-color:#f5f5f7;line-height:40px}
+.bt-logo-text i{font-style:normal}
+.bt:hover .bt-logo-text{opacity:.95}
+
+/* ─── Text block: anchored to bottom, z-indexed above glow ─── */
+.bt-name{font-size:16px;font-weight:800;letter-spacing:-.02em;margin-bottom:5px;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;position:relative;z-index:2}
+.bt-desc{font-size:12px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.6;position:relative;z-index:2}
+.bt-url{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-top:12px;display:inline-flex;align-items:center;gap:6px;transition:gap .4s cubic-bezier(.22,1,.36,1),color .3s;position:relative;z-index:2;letter-spacing:.3px}
+.bt:hover .bt-url{gap:10px}
+
+/* ─── Superposition: hero tile, spans 3 cols ─── */
+.bt--spc{grid-column:span 3}
+.bt--spc::before{background:radial-gradient(ellipse at 70% 20%,rgba(37,99,235,.08),transparent 65%)}
+.bt--spc .bt-logo{height:48px}
+.bt--spc .bt-logo img{height:44px;filter:brightness(2)}
+.bt--spc:hover .bt-logo img{filter:brightness(2.5)}
+.bt--spc .bt-name{font-size:20px}
+.bt--spc .bt-desc{font-size:13px;max-width:520px;color:#55555f;-webkit-text-fill-color:#55555f}
+@media(max-width:900px){.bt--spc{grid-column:span 2}}
+@media(max-width:580px){.bt--spc{grid-column:span 1}}
+
+/* ─── Fulcrum: tall tile, spans 2 rows ─── */
+.bt--ful{grid-column:4;grid-row:1 / span 2}
+.bt--ful::before{background:radial-gradient(ellipse at 50% 25%,rgba(99,102,241,.08),transparent 60%)}
+.bt--ful .bt-logo{height:48px}
+.bt--ful .bt-logo-text{font-size:34px;line-height:48px}
+.bt--ful .bt-logo-text i{color:#2563eb;-webkit-text-fill-color:#2563eb}
+@media(max-width:900px){.bt--ful{grid-column:span 1;grid-row:span 1}}
+
+/* ─── Bottom row: align titles by giving desc a min-height ─── */
+.bt--sol .bt-desc,.bt--lavr .bt-desc,.bt--blaw .bt-desc{min-height:40px}
+
+/* ─── Solidity ─── */
+.bt--sol::before{background:radial-gradient(ellipse at 30% 60%,rgba(59,130,246,.06),transparent 55%)}
+.bt--sol .bt-logo img{height:32px;filter:brightness(1.6)}
+.bt--sol:hover .bt-logo img{filter:brightness(2)}
+
+/* ─── Lavr ─── */
+.bt--lavr::before{background:radial-gradient(ellipse at 60% 40%,rgba(196,196,196,.05),transparent 55%)}
+.bt--lavr .bt-logo img{height:24px;filter:brightness(2)}
+.bt--lavr:hover .bt-logo img{filter:brightness(2.5)}
+
+/* ─── Bron Law ─── */
+.bt--blaw::before{background:radial-gradient(ellipse at 50% 50%,rgba(37,99,235,.04),transparent 55%)}
+.bt--blaw .bt-logo-text{font-size:22px;font-weight:900;color:#55555f;-webkit-text-fill-color:#55555f;letter-spacing:-.01em}
+.bt-status{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:1.5px;text-transform:uppercase;margin-top:12px;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2}
+.bt-status::before{content:'';width:5px;height:5px;border-radius:50%;background:#2563eb;animation:statusPulse 2.5s ease-in-out infinite}
+@keyframes statusPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+
+/* ═══ Reveal animations (KEPT) ═══ */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rvs{opacity:0;transform:translateY(20px) scale(.98);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rvs.v{opacity:1;transform:none}
+
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">VENTURES: PERFECTED</div>
+<a href="/preview/" class="back">workspace</a>
+
+<div class="above-section">Hero + divider above</div>
+
+<section class="ventures" id="ventures">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">Ventures</div>
+<div class="sh-title">What I build<span class="dim">.</span></div>
+</div>
+
+<div class="bento" id="bentoGrid">
+<a href="https://superpositioncap.com" target="_blank" class="bt bt--spc rvs">
+<div class="bt-logo"><img src="/superposition-logo.png" alt="Superposition Capital logo"></div>
+<div class="bt-name">Superposition Capital</div>
+<div class="bt-desc">Seed fund investing in AI for regulated industries. Partnering with founders building infrastructure that actually works.</div>
+<div class="bt-url">superpositioncap.com &#8594;</div>
+</a>
+
+<a href="https://askfulcrum.com" target="_blank" class="bt bt--ful rvs">
+<div class="bt-logo"><div class="bt-logo-text">Fulcrum<i>.</i></div></div>
+<div class="bt-name">AI Operations</div>
+<div class="bt-desc">Custom AI systems for operations teams. From audit to deployment in weeks, not months. Built for regulated industries where automation cannot break.</div>
+<div class="bt-url">askfulcrum.com &#8594;</div>
+</a>
+
+<a href="https://solidity.law" target="_blank" class="bt bt--sol rvs">
+<div class="bt-logo"><img src="/solidity-logo.png" alt="Solidity Law logo"></div>
+<div class="bt-name">Solidity Law</div>
+<div class="bt-desc">Financial law, regulatory compliance, and technology law for the digital economy.</div>
+<div class="bt-url">solidity.law &#8594;</div>
+</a>
+
+<a href="https://lavr-int.com" target="_blank" class="bt bt--lavr rvs">
+<div class="bt-logo"><img src="/lavr-logo.svg" alt="Lavr International logo"></div>
+<div class="bt-name">Lavr International</div>
+<div class="bt-desc">Security consulting and logistical support. Coast to coast and beyond.</div>
+<div class="bt-url">lavr-int.com &#8594;</div>
+</a>
+
+<div class="bt bt--blaw rvs" style="cursor:default">
+<div class="bt-logo"><div class="bt-logo-text">Bron Law</div></div>
+<div class="bt-name">Legal Practice</div>
+<div class="bt-desc">Full-service legal practice. Details coming.</div>
+<div class="bt-status">Coming Soon</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="below-section">Featured section below</div>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+
+var sio=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting)return;
+var children=e.target.querySelectorAll('.rvs');
+children.forEach(function(c,i){c.style.transitionDelay=(i*120)+'ms';c.classList.add('v')});
+sio.unobserve(e.target);
+});
+},{threshold:.08});
+var bg=document.getElementById('bentoGrid');if(bg)sio.observe(bg);
+})();
+</script>
+</body>
+</html>

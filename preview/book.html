@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book Section Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:500}
+a{color:inherit;text-decoration:none}
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+.tag{display:inline-block;background:#2563eb;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:6px;margin-bottom:24px;letter-spacing:1px}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 20%,rgba(255,255,255,.06) 80%,transparent);margin:80px 0}
+
+/* ═══ BOOK OPTION A: Editorial Split ═══ */
+.book-a{padding:100px 0}
+.book-a-grid{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center}
+@media(max-width:900px){.book-a-grid{grid-template-columns:1fr;gap:40px;text-align:center}}
+.book-cover{position:relative}
+.book-cover-img{width:100%;max-width:280px;border-radius:8px;box-shadow:0 32px 80px rgba(0,0,0,.6),0 0 1px rgba(255,255,255,.08);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.book-cover-img:hover{transform:translateY(-4px) rotate(-1deg)}
+.book-cover-glow{position:absolute;inset:-20%;background:radial-gradient(ellipse,rgba(37,99,235,.08),transparent 70%);pointer-events:none;z-index:-1}
+@media(max-width:900px){.book-cover{display:flex;justify-content:center}.book-cover-img{max-width:200px}}
+.book-info h3{font-size:clamp(24px,3vw,36px);font-weight:900;letter-spacing:-.04em;line-height:1.1;margin-bottom:16px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.book-info .subtitle{font-size:14px;color:#2563eb;-webkit-text-fill-color:#2563eb;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+.book-info p{font-size:15px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.8;margin-bottom:24px}
+.book-info p strong{color:#a1a1aa;-webkit-text-fill-color:#a1a1aa}
+.book-cta{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.book-cta{justify-content:center}}
+.btn-p{background:linear-gradient(135deg,#2563eb,#6366f1);color:#fff;-webkit-text-fill-color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-flex;align-items:center;gap:8px}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.3)}
+.btn-gh{color:#71717a;-webkit-text-fill-color:#71717a;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.06);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn-gh:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-color:rgba(99,102,241,.2);transform:translateY(-2px)}
+
+/* ═══ BOOK OPTION B: Full-width cinematic ═══ */
+.book-b{padding:100px 0}
+.book-b-inner{background:#0a0a0c;border-radius:24px;border:1px solid rgba(255,255,255,.04);padding:64px;display:grid;grid-template-columns:220px 1fr;gap:56px;align-items:center;position:relative;overflow:hidden}
+.book-b-inner::before{content:'';position:absolute;top:-50%;right:-20%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(37,99,235,.06),transparent 70%);pointer-events:none}
+@media(max-width:900px){.book-b-inner{grid-template-columns:1fr;padding:40px 24px;text-align:center;gap:32px}}
+.book-b-cover{position:relative;z-index:1}
+.book-b-cover img{width:100%;max-width:220px;border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.5)}
+@media(max-width:900px){.book-b-cover{display:flex;justify-content:center}.book-b-cover img{max-width:180px}}
+.book-b-text{position:relative;z-index:1}
+.book-b-text .year{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.book-b-text h3{font-size:clamp(22px,3vw,32px);font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-bottom:16px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.book-b-text p{font-size:14px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.8;margin-bottom:24px;max-width:480px}
+@media(max-width:900px){.book-b-text p{max-width:100%}}
+.book-b-text .book-cta{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:900px){.book-b-text .book-cta{justify-content:center}}
+
+/* ═══ BOOK OPTION C: Minimal inline ═══ */
+.book-c{padding:100px 0}
+.book-c-row{display:flex;align-items:center;gap:40px;padding:32px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+@media(max-width:734px){.book-c-row{flex-direction:column;text-align:center;gap:24px}}
+.book-c-cover img{width:80px;border-radius:4px;box-shadow:0 8px 24px rgba(0,0,0,.4);flex-shrink:0}
+.book-c-info{flex:1}
+.book-c-info h3{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.book-c-info p{font-size:13px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.6}
+.book-c-link{font-size:13px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;flex-shrink:0;transition:opacity .3s}
+.book-c-link:hover{opacity:.7}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION A - Editorial Split</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="book-a">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Published</div>
+<div class="sh-title">The book<span class="dim">.</span></div>
+</div>
+<div class="book-a-grid">
+<div class="book-cover">
+<div class="book-cover-glow"></div>
+<img class="book-cover-img" src="/uploads/81HCBIyrJVL._SL1500_.jpg" alt="The 4th Industrial Revolution book cover">
+</div>
+<div class="book-info">
+<div class="subtitle">Published 2022</div>
+<h3>The 4th Industrial Revolution</h3>
+<p>A deep dive into the innovations and decentralized systems reshaping industries. Written at 20, covering <strong>AI, blockchain, fintech</strong>, and the infrastructure powering the next wave of technology.</p>
+<p>Available on Amazon worldwide.</p>
+<div class="book-cta">
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="btn-p">Read on Amazon →</a>
+<a href="https://www.amazon.com/author/bron" target="_blank" class="btn-gh">Author Page</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="w"><div class="divider"></div></div>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION B - Cinematic Card</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="book-b">
+<div class="w">
+<div class="book-b-inner">
+<div class="book-b-cover">
+<img src="/uploads/81HCBIyrJVL._SL1500_.jpg" alt="The 4th Industrial Revolution book cover">
+</div>
+<div class="book-b-text">
+<div class="year">Published 2022</div>
+<h3>The 4th Industrial Revolution</h3>
+<p>Innovations and decentralized systems reshaping industries. A look at AI, blockchain, and fintech infrastructure from the inside. Written at 20.</p>
+<div class="book-cta">
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="btn-p">Read on Amazon →</a>
+<a href="https://www.amazon.com/author/bron" target="_blank" class="btn-gh">Author Page</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="w"><div class="divider"></div></div>
+
+<!-- ═══════════════════════════════ -->
+<div class="w"><span class="tag">OPTION C - Minimal Inline (fits inside Featured section)</span></div>
+<!-- ═══════════════════════════════ -->
+<section class="book-c">
+<div class="w">
+<div class="book-c-row">
+<div class="book-c-cover">
+<img src="/uploads/81HCBIyrJVL._SL1500_.jpg" alt="The 4th Industrial Revolution">
+</div>
+<div class="book-c-info">
+<h3>The 4th Industrial Revolution</h3>
+<p>Innovations and decentralized systems reshaping industries. Written at 20, published 2022. Available on Amazon.</p>
+</div>
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="book-c-link">Read on Amazon →</a>
+</div>
+</div>
+</section>
+
+</body>
+</html>

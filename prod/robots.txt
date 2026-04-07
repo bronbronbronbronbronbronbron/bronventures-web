@@ -1,0 +1,22 @@
+# bronventures.com - Daniel Bron
+User-agent: *
+Allow: /
+Disallow: /preview/
+Disallow: /uploads/Screenshot*
+Disallow: /upload-photos
+
+Sitemap: https://bronventures.com/sitemap.xml
+
+# AI Agent Discovery
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Claude-Web
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Anthropic-AI
+Allow: /
+User-agent: PerplexityBot
+Allow: /

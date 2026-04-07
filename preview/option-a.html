@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="https://schema.org/WebPage">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daniel Bron - Entrepreneur, Operator, Investor</title>
+<meta name="description" content="Daniel Bron is an American entrepreneur, operator, researcher, and investor. Founder of Fulcrum and Superposition Capital. Building at the intersection of technology, strategy, and execution.">
+<meta name="author" content="Daniel Bron">
+<link rel="canonical" href="https://bronventures.com">
+<meta property="og:title" content="Daniel Bron - Entrepreneur, Operator, Investor">
+<meta property="og:description" content="American entrepreneur, operator, researcher, and investor. Founder of Fulcrum and Superposition Capital.">
+<meta property="og:url" content="https://bronventures.com">
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-weight:500}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding-top:10px}
+.nav-in{max-width:600px;margin:0 auto;padding:0 22px;display:flex;justify-content:space-between;align-items:center;height:48px;background:rgba(9,9,11,.82);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border:1px solid rgba(255,255,255,.06);border-radius:980px}
+.nav-name{font-size:14px;font-weight:800;letter-spacing:-.5px;color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+.nav-name i{font-style:normal;color:#2563eb;-webkit-text-fill-color:#2563eb;font-size:18px}
+.nav-links{display:flex;gap:20px;align-items:center}
+.nav-links a{font-size:11px;color:#55555f;-webkit-text-fill-color:#55555f;font-weight:600;transition:color .3s,-webkit-text-fill-color .3s;letter-spacing:.5px;text-transform:uppercase}
+.nav-links a:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:15%;left:50%;transform:translateX(-50%);width:900px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.05),transparent 65%);pointer-events:none;animation:heroPulse 6s ease-in-out infinite alternate}
+@keyframes heroPulse{0%{opacity:.4;transform:translateX(-50%) scale(.95)}100%{opacity:1;transform:translateX(-50%) scale(1.05)}}
+
+.photo-wrap{width:140px;height:140px;border-radius:50%;overflow:hidden;margin-bottom:32px;position:relative;z-index:1;border:2px solid rgba(37,99,235,.3)}
+.photo-wrap img{width:100%;height:100%;object-fit:cover}
+.photo-placeholder{width:100%;height:100%;background:linear-gradient(135deg,#1c1c1e,#2a2a2e);display:flex;align-items:center;justify-content:center;font-size:48px;font-weight:900;color:#2563eb;-webkit-text-fill-color:#2563eb}
+
+.hero h1{font-size:clamp(40px,7vw,72px);font-weight:900;letter-spacing:-.05em;line-height:1.02;margin-bottom:16px;position:relative;z-index:1;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+
+.title-rotate{height:1.1em;overflow:hidden;display:inline-block;position:relative}
+.title-rotate span{display:block;animation:titleCycle 12s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes titleCycle{
+0%,16%{transform:translateY(0)}
+20%,36%{transform:translateY(-1.1em)}
+40%,56%{transform:translateY(-2.2em)}
+60%,76%{transform:translateY(-3.3em)}
+80%,96%{transform:translateY(-4.4em)}
+100%{transform:translateY(0)}
+}
+
+.hero-sub{font-size:clamp(15px,1.6vw,18px);color:#71717a;-webkit-text-fill-color:#71717a;max-width:480px;line-height:1.7;margin-bottom:40px;font-weight:500;position:relative;z-index:1}
+
+.hero-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;position:relative;z-index:1}
+.hero-link{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:10px;font-size:13px;font-weight:600;transition:all .3s cubic-bezier(.22,1,.36,1)}
+.hero-link.primary{background:linear-gradient(135deg,#2563eb,#6366f1);color:#fff;-webkit-text-fill-color:#fff}
+.hero-link.primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.3)}
+.hero-link.ghost{border:1px solid rgba(255,255,255,.08);color:#86868b;-webkit-text-fill-color:#86868b}
+.hero-link.ghost:hover{border-color:rgba(99,102,241,.25);color:#eeeef0;-webkit-text-fill-color:#eeeef0;transform:translateY(-2px)}
+
+.scroll-cue{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-cue-text{font-size:8px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7;opacity:.2}
+.scroll-line{width:1px;height:40px;background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);position:relative;overflow:hidden}
+.scroll-dot{position:absolute;top:-8px;left:50%;transform:translateX(-50%);width:3px;height:8px;border-radius:3px;background:rgba(245,245,247,.5);box-shadow:0 0 8px rgba(245,245,247,.3);animation:dotDrift 3s cubic-bezier(.4,0,.2,1) infinite;opacity:0}
+@keyframes dotDrift{0%{top:-8px;opacity:0}8%{opacity:.8}50%{opacity:.4}70%{top:100%;opacity:0}100%{top:100%;opacity:0}}
+
+/* SECTIONS */
+.w{max-width:1140px;margin:0 auto;padding:0 24px}
+.section{padding:80px 0}
+.section-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#55555f;-webkit-text-fill-color:#55555f;margin-bottom:16px}
+.section-title{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.035em;margin-bottom:48px}
+.divider{height:1px;background:rgba(255,255,255,.06);margin:0 24px;max-width:1140px;margin-left:auto;margin-right:auto}
+
+/* VENTURES BENTO */
+.bento{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+@media(max-width:734px){.bento{grid-template-columns:1fr}}
+.bt{background:#1c1c1e;border-radius:18px;padding:28px;position:relative;overflow:hidden;transition:all .4s cubic-bezier(.22,1,.36,1);border:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;justify-content:space-between;min-height:200px}
+.bt::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.03),transparent 70%);opacity:0;transition:opacity .6s;pointer-events:none}
+.bt:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.15)}
+.bt:hover::before{opacity:1}
+.bt-icon{font-size:28px;margin-bottom:16px}
+.bt-title{font-size:18px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.bt-desc{font-size:13px;color:#86868b;-webkit-text-fill-color:#86868b;line-height:1.6}
+.bt-link{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:.5px;margin-top:16px;display:inline-flex;align-items:center;gap:4px;transition:gap .3s cubic-bezier(.22,1,.36,1)}
+.bt:hover .bt-link{gap:8px}
+.bt.wide{grid-column:span 2}
+@media(max-width:734px){.bt.wide{grid-column:span 1}}
+
+/* FEATURED */
+.featured-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+@media(max-width:734px){.featured-grid{grid-template-columns:1fr}}
+.ft{background:#1c1c1e;border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,.04);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.ft:hover{border-color:rgba(37,99,235,.12);transform:translateY(-2px)}
+.ft-tag{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;color:#818cf8;-webkit-text-fill-color:#818cf8;margin-bottom:10px}
+.ft-title{font-size:15px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+.ft-desc{font-size:12px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.6}
+.ft-link{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-top:12px;display:inline-flex;align-items:center;gap:4px}
+
+/* BIO */
+.bio{max-width:680px}
+.bio p{font-size:15px;color:#a1a1aa;-webkit-text-fill-color:#a1a1aa;line-height:1.8;margin-bottom:20px}
+.bio strong{color:#eeeef0;-webkit-text-fill-color:#eeeef0;font-weight:700}
+
+/* TIMELINE */
+.timeline{margin-top:40px}
+.tl-item{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.tl-year{font-size:13px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;min-width:50px;letter-spacing:-.02em}
+.tl-text{font-size:13px;color:#86868b;-webkit-text-fill-color:#86868b;line-height:1.6}
+
+/* SOCIAL FOOTER */
+.social-grid{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:32px}
+.social-pill{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:#1c1c1e;border-radius:980px;font-size:13px;font-weight:600;border:1px solid rgba(255,255,255,.04);transition:all .3s cubic-bezier(.22,1,.36,1);color:#86868b;-webkit-text-fill-color:#86868b}
+.social-pill:hover{border-color:rgba(37,99,235,.2);color:#eeeef0;-webkit-text-fill-color:#eeeef0;transform:translateY(-2px)}
+.social-pill svg{width:16px;height:16px;fill:currentColor}
+
+footer{text-align:center;padding:48px 24px;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:11px;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:.15em;font-weight:400}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+
+/* BACK TO LAB */
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-color:rgba(37,99,235,.2)}
+</style>
+</head>
+<body>
+
+<a href="/" class="back">← Preview Lab</a>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-in">
+<a href="#" class="nav-name">Daniel Bron<i>.</i></a>
+<div class="nav-links">
+<a href="#ventures">Ventures</a>
+<a href="#about">About</a>
+<a href="https://linkedin.com/in/dbron" target="_blank">LinkedIn</a>
+</div>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="photo-wrap">
+<div class="photo-placeholder">DB</div>
+</div>
+<h1>Daniel Bron</h1>
+<p style="font-size:clamp(18px,2.5vw,24px);font-weight:700;color:#71717a;-webkit-text-fill-color:#71717a;margin-bottom:8px;letter-spacing:-.02em">
+<span class="title-rotate">
+<span style="color:#eeeef0;-webkit-text-fill-color:#eeeef0">Entrepreneur</span>
+<span style="color:#eeeef0;-webkit-text-fill-color:#eeeef0">Operator</span>
+<span style="color:#eeeef0;-webkit-text-fill-color:#eeeef0">Investor</span>
+<span style="color:#eeeef0;-webkit-text-fill-color:#eeeef0">Researcher</span>
+<span style="color:#eeeef0;-webkit-text-fill-color:#eeeef0">Builder</span>
+</span>
+</p>
+<p class="hero-sub">Building at the intersection of technology, strategy, and execution. Turning complex systems into real businesses.</p>
+<div class="hero-links">
+<a href="https://linkedin.com/in/dbron" target="_blank" class="hero-link primary">LinkedIn →</a>
+<a href="https://instagram.com/broninc" target="_blank" class="hero-link ghost">Instagram</a>
+<a href="https://cal.com/daniel-bron-lfpkai" target="_blank" class="hero-link ghost">Book a Call</a>
+</div>
+<div class="scroll-cue">
+<div class="scroll-cue-text">Scroll</div>
+<div class="scroll-line"><div class="scroll-dot"></div></div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- VENTURES -->
+<section class="section" id="ventures">
+<div class="w">
+<div class="section-label rv">Ventures</div>
+<div class="section-title rv">What I build.</div>
+<div class="bento">
+<a href="https://superpositioncap.com" target="_blank" class="bt rv">
+<div>
+<div class="bt-icon">◐</div>
+<div class="bt-title">Superposition Capital</div>
+<div class="bt-desc">Seed fund investing in AI for regulated industries. Partnering with founders building infrastructure that actually works.</div>
+</div>
+<div class="bt-link">superpositioncap.com →</div>
+</a>
+<a href="https://askfulcrum.com" target="_blank" class="bt rv">
+<div>
+<div class="bt-icon">⚡</div>
+<div class="bt-title">Fulcrum</div>
+<div class="bt-desc">Custom AI systems for operations teams. From audit to deployment in weeks, not months. Built for regulated industries.</div>
+</div>
+<div class="bt-link">askfulcrum.com →</div>
+</a>
+<a href="https://solidity.law" target="_blank" class="bt rv">
+<div>
+<div class="bt-icon">§</div>
+<div class="bt-title">Solidity Law</div>
+<div class="bt-desc">Blockchain legal services. Financial law, regulatory compliance, and technology law for the digital economy.</div>
+</div>
+<div class="bt-link">solidity.law →</div>
+</a>
+<a href="https://lavr-int.com" target="_blank" class="bt rv">
+<div>
+<div class="bt-icon">◆</div>
+<div class="bt-title">Lavr International</div>
+<div class="bt-desc">Security consulting and logistical support. From the Middle East to Maritime operations, coast to coast and beyond.</div>
+</div>
+<div class="bt-link">lavr-int.com →</div>
+</a>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURED -->
+<section class="section">
+<div class="w">
+<div class="section-label rv">Featured</div>
+<div class="section-title rv">In the field.</div>
+<div class="featured-grid">
+<a href="https://builtin.com/artificial-intelligence/neuromorphic-computing" target="_blank" class="ft rv">
+<div class="ft-tag">Built In</div>
+<div class="ft-title">Neuromorphic Computing</div>
+<div class="ft-desc">Featured expert commentary on the future of brain-inspired computing architectures.</div>
+<div class="ft-link">Read →</div>
+</a>
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="ft rv">
+<div class="ft-tag">Book</div>
+<div class="ft-title">The 4th Industrial Revolution</div>
+<div class="ft-desc">The fine line between digital innovations and complete chaos. AI, Web3, and the future of business.</div>
+<div class="ft-link">Amazon →</div>
+</a>
+<a href="https://linkedin.com/in/dbron" target="_blank" class="ft rv">
+<div class="ft-tag">Newsletter</div>
+<div class="ft-title">Chain Reaction</div>
+<div class="ft-desc">886+ subscribers. Expert analysis on AI, technology, and business transformation. Weekly on LinkedIn.</div>
+<div class="ft-link">Subscribe →</div>
+</a>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BIO -->
+<section class="section" id="about">
+<div class="w">
+<div class="section-label rv">About</div>
+<div class="section-title rv">The full story.</div>
+<div class="bio">
+<p class="rv"><strong>Daniel Bron</strong> is an American entrepreneur, operator, researcher, and investor focused on turning complex technologies into real businesses, systems, and strategic outcomes. He launched his first venture at 12 and has spent the past decade building across marketing, design, development, fintech, AI, and emerging technology, with a consistent focus on execution that actually works.</p>
+<p class="rv">By his early 20s, Daniel had already built, scaled, and exited companies, advised major brands and public institutions, and developed a reputation for operating where complexity, technology, and real-world execution meet. His work has included advising organizations such as DeLorean and Ukraine's Ministry of Digital Transformation, helping bridge the gap between ambitious ideas and systems that can actually perform in practice.</p>
+<p class="rv">Today, Daniel leads <strong>Fulcrum</strong> and <strong>Superposition Capital</strong>, where his work sits at the intersection of research-led strategic advisory, company building, and investment. He has spoken at venues including the Javits Center in New York and the LA Convention Center, worked with companies that reached multi-billion-dollar valuations, and built his career around one core belief: <strong>practical innovation matters more than hype, and execution is what makes ideas real.</strong></p>
+</div>
+
+<div class="timeline rv">
+<div class="tl-item"><div class="tl-year">2025</div><div class="tl-text">NSU Shepard Broad College of Law. Superposition Capital launched.</div></div>
+<div class="tl-item"><div class="tl-year">2024</div><div class="tl-text">Fulcrum founded. University of Miami honors graduate, presidential recognition for AI policy work.</div></div>
+<div class="tl-item"><div class="tl-year">2023</div><div class="tl-text">Published "The 4th Industrial Revolution." MIT Task Force on Generative AI in Law.</div></div>
+<div class="tl-item"><div class="tl-year">2022</div><div class="tl-text">Solidity Law founded. Peter Thiel Fellow finalist. Ukraine Ministry recognition.</div></div>
+<div class="tl-item"><div class="tl-year">2019</div><div class="tl-text">Advised DeLorean, Lamborghini leadership. Companies reached $2.2B+ valuations.</div></div>
+<div class="tl-item"><div class="tl-year">2016</div><div class="tl-text">First celebrity client (Post Malone) at age 14. Young Entrepreneurs Award.</div></div>
+<div class="tl-item"><div class="tl-year">2014</div><div class="tl-text">First venture at age 12. Built and funded by Minecraft server revenue.</div></div>
+</div>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CONNECT -->
+<section class="section" style="text-align:center">
+<div class="w">
+<div class="section-label rv">Connect</div>
+<div class="section-title rv">Find me here.</div>
+<div class="social-grid rv">
+<a href="https://linkedin.com/in/dbron" target="_blank" class="social-pill">
+<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+LinkedIn
+</a>
+<a href="https://instagram.com/broninc" target="_blank" class="social-pill">
+<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+Instagram
+</a>
+<a href="https://superpositioncap.com" target="_blank" class="social-pill">◐ Superposition</a>
+<a href="https://askfulcrum.com" target="_blank" class="social-pill">⚡ Fulcrum</a>
+<a href="https://solidity.law" target="_blank" class="social-pill">§ Solidity Law</a>
+<a href="https://lavr-int.com" target="_blank" class="social-pill">◆ Lavr</a>
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="social-pill">📖 Book</a>
+<a href="https://builtin.com/artificial-intelligence/neuromorphic-computing" target="_blank" class="social-pill">📰 Built In</a>
+<a href="https://cal.com/daniel-bron-lfpkai" target="_blank" class="social-pill">📅 Book a Call</a>
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Daniel Bron. All rights reserved.</p>
+</footer>
+
+<script>
+// Scroll reveal
+const obs=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>

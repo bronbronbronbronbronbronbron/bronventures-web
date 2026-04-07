@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Final Sections Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;overflow-x:hidden;font-weight:500}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+.sh-sub{font-size:14px;color:#55555f;-webkit-text-fill-color:#55555f;margin-top:12px;line-height:1.6}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06) 20%,rgba(255,255,255,.06) 80%,transparent)}
+
+.btn-p{background:linear-gradient(135deg,#2563eb,#6366f1);color:#fff;-webkit-text-fill-color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-flex;align-items:center;gap:8px}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.3)}
+.btn-gh{color:#71717a;-webkit-text-fill-color:#71717a;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.06);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn-gh:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-color:rgba(99,102,241,.2);transform:translateY(-2px)}
+
+/* ═══ BOOK - CINEMATIC CARD (OPTION B PERFECTED) ═══ */
+.book{padding:100px 0}
+@media(max-width:734px){.book{padding:64px 0}}
+.book-card{background:#0a0a0c;border-radius:24px;border:1px solid rgba(255,255,255,.04);padding:56px;display:grid;grid-template-columns:200px 1fr;gap:48px;align-items:center;position:relative;overflow:hidden;transition:border-color .4s cubic-bezier(.22,1,.36,1)}
+.book-card:hover{border-color:rgba(255,255,255,.06)}
+.book-card::before{content:'';position:absolute;top:-40%;right:-15%;width:500px;height:500px;background:radial-gradient(ellipse,rgba(37,99,235,.05),transparent 70%);pointer-events:none}
+.book-card::after{content:'';position:absolute;bottom:-30%;left:-10%;width:400px;height:400px;background:radial-gradient(ellipse,rgba(99,102,241,.03),transparent 70%);pointer-events:none}
+@media(max-width:900px){.book-card{grid-template-columns:1fr;padding:40px 28px;text-align:center;gap:32px}}
+@media(max-width:580px){.book-card{padding:32px 20px;border-radius:18px}}
+
+.book-cover{position:relative;z-index:1}
+.book-cover img{width:100%;max-width:200px;border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.5),0 0 1px rgba(255,255,255,.06);transition:transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1)}
+.book-card:hover .book-cover img{transform:translateY(-4px) rotate(-.5deg);box-shadow:0 28px 60px rgba(0,0,0,.6),0 0 1px rgba(255,255,255,.08)}
+@media(max-width:900px){.book-cover{display:flex;justify-content:center}.book-cover img{max-width:160px}}
+
+.book-text{position:relative;z-index:1}
+.book-year{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.book-text h3{font-size:clamp(20px,2.5vw,28px);font-weight:900;letter-spacing:-.03em;line-height:1.15;margin-bottom:14px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.book-text p{font-size:14px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.8;margin-bottom:20px;max-width:440px}
+.book-text p strong{color:#a1a1aa;-webkit-text-fill-color:#a1a1aa}
+@media(max-width:900px){.book-text p{max-width:100%}}
+.book-cta{display:flex;gap:10px;flex-wrap:wrap}
+@media(max-width:900px){.book-cta{justify-content:center}}
+@media(max-width:580px){.book-cta .btn-p,.book-cta .btn-gh{padding:11px 20px;font-size:13px}}
+
+/* ═══ SPEAKING - HIGHLIGHTS + VENUE STRIP (OPTION A PERFECTED) ═══ */
+.speaking{padding:100px 0}
+@media(max-width:734px){.speaking{padding:64px 0}}
+
+.speak-list{display:flex;flex-direction:column;gap:3px;margin-bottom:40px}
+
+.speak-item{background:#0a0a0c;border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:24px 28px;display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;transition:border-color .3s cubic-bezier(.22,1,.36,1),transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s cubic-bezier(.22,1,.36,1)}
+.speak-item:hover{border-color:rgba(255,255,255,.08);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+@media(max-width:734px){.speak-item{grid-template-columns:1fr;gap:6px;padding:20px 20px}}
+
+.speak-year{font-size:13px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:.3px}
+
+.speak-info{}
+.speak-title{font-size:15px;font-weight:700;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;letter-spacing:-.01em;line-height:1.3;transition:color .3s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .3s cubic-bezier(.22,1,.36,1)}
+.speak-item:hover .speak-title{color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.speak-desc{font-size:12px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.5;margin-top:3px}
+@media(max-width:734px){.speak-desc{display:none}}
+
+.speak-venue{font-size:10px;font-weight:700;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:1.2px;text-transform:uppercase;white-space:nowrap;transition:color .3s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .3s cubic-bezier(.22,1,.36,1)}
+.speak-item:hover .speak-venue{color:#55555f;-webkit-text-fill-color:#55555f}
+
+/* Venue strip */
+.venue-strip{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;padding:24px 0;border-top:1px solid rgba(255,255,255,.04)}
+.venue-strip span{font-size:10px;font-weight:700;color:#2a2a2e;-webkit-text-fill-color:#2a2a2e;letter-spacing:1.8px;text-transform:uppercase;transition:color .4s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .4s cubic-bezier(.22,1,.36,1)}
+.venue-strip span:hover{color:#55555f;-webkit-text-fill-color:#55555f}
+.venue-dot{width:3px;height:3px;border-radius:50%;background:#2a2a2e;flex-shrink:0}
+@media(max-width:734px){.venue-strip{gap:12px 16px;padding:20px 0}.venue-strip span{font-size:9px;letter-spacing:1.5px}.venue-dot{display:none}}
+</style>
+</head>
+<body>
+
+<!-- ═══ BOOK SECTION ═══ -->
+<section class="book">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Published</div>
+<div class="sh-title">The book<span class="dim">.</span></div>
+</div>
+<div class="book-card">
+<div class="book-cover">
+<img src="/uploads/81HCBIyrJVL._SL1500_.jpg" alt="The 4th Industrial Revolution book cover">
+</div>
+<div class="book-text">
+<div class="book-year">Published 2022</div>
+<h3>The 4th Industrial Revolution</h3>
+<p>A deep dive into <strong>AI, blockchain, fintech</strong>, and the decentralized systems reshaping industries. Written at 20, exploring the infrastructure powering the next wave of technology.</p>
+<div class="book-cta">
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="btn-p">Read on Amazon →</a>
+<a href="https://www.amazon.com/author/bron" target="_blank" class="btn-gh">Author Page</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="w"><div class="divider"></div></div>
+
+<!-- ═══ SPEAKING SECTION ═══ -->
+<section class="speaking">
+<div class="w">
+<div class="sh">
+<div class="sh-label">Speaking</div>
+<div class="sh-title">On stage<span class="dim">.</span></div>
+<div class="sh-sub">Select appearances from conferences, panels, and industry events.</div>
+</div>
+
+<div class="speak-list">
+
+<div class="speak-item">
+<div class="speak-year">2024</div>
+<div class="speak-info">
+<div class="speak-title">DeLorean and the Future of Mobility</div>
+<div class="speak-desc">Representing DeLorean Motor Company on next-generation automotive technology</div>
+</div>
+<div class="speak-venue">LA Convention Center</div>
+</div>
+
+<div class="speak-item">
+<div class="speak-year">2023</div>
+<div class="speak-info">
+<div class="speak-title">NFTs, Digital Assets, and the Law</div>
+<div class="speak-desc">Legal panel on regulatory frameworks, token classification, and compliance</div>
+</div>
+<div class="speak-venue">Javits Center, NYC</div>
+</div>
+
+<div class="speak-item">
+<div class="speak-year">2022</div>
+<div class="speak-info">
+<div class="speak-title">Luxury Operations in the Digital Age</div>
+<div class="speak-desc">Technology integration for a global luxury house across continents</div>
+</div>
+<div class="speak-venue">Javits Center, NYC</div>
+</div>
+
+</div>
+
+<div class="venue-strip">
+<span>Javits Center</span>
+<div class="venue-dot"></div>
+<span>LA Convention Center</span>
+<div class="venue-dot"></div>
+<span>Industry Conferences</span>
+<div class="venue-dot"></div>
+<span>Corporate Events</span>
+<div class="venue-dot"></div>
+<span>Private Panels</span>
+</div>
+
+</div>
+</section>
+
+</body>
+</html>

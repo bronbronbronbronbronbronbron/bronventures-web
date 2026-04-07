@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Moments Section Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:48px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ MOMENTS GRID ═══
+   Asymmetric editorial photo grid. Each photo gets proper
+   aspect ratio treatment. Captions on hover. No head cutting. */
+.moments{padding:100px 0}
+@media(max-width:734px){.moments{padding:72px 0}}
+
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media(max-width:734px){.mg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.mg{grid-template-columns:1fr}}
+
+.mi{position:relative;overflow:hidden;border-radius:14px;background:#0a0a0c;cursor:default}
+.mi img{width:100%;height:100%;object-fit:cover;filter:grayscale(.35) brightness(.7);transition:all .6s cubic-bezier(.22,1,.36,1)}
+.mi:hover img{filter:grayscale(0) brightness(.85);transform:scale(1.03)}
+
+/* Caption overlay */
+.mi-cap{position:absolute;bottom:0;left:0;right:0;padding:16px 18px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.8));opacity:0;transform:translateY(4px);transition:all .4s cubic-bezier(.22,1,.36,1);pointer-events:none}
+.mi:hover .mi-cap{opacity:1;transform:none}
+.mi-cap-year{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:1px;margin-bottom:2px}
+.mi-cap-text{font-size:12px;font-weight:600;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;line-height:1.4}
+
+/* ─── Sizing: each photo gets specific height + object-position ─── */
+/* CRITICAL: object-position percentage = distance from TOP. Lower % = show more of the top.
+   All photos have heads in top 20-30%, so we anchor near top. */
+
+/* Row 1: stage (wide) + fed board */
+.mi--stage{grid-column:span 2;height:380px}
+.mi--stage img{object-position:center 10%}
+@media(max-width:734px){.mi--stage{grid-column:span 2;height:300px}}
+@media(max-width:480px){.mi--stage{grid-column:span 1;height:320px}}
+
+.mi--fed{height:380px}
+.mi--fed img{object-position:center 12%}
+@media(max-width:734px){.mi--fed{height:300px}}
+@media(max-width:480px){.mi--fed{height:360px}}
+
+/* Row 2: lambo 1 + lambo 2 + sneakers */
+.mi--lambo1{height:320px}
+.mi--lambo1 img{object-position:center 8%}
+@media(max-width:734px){.mi--lambo1{height:280px}}
+
+.mi--lambo2{height:320px}
+.mi--lambo2 img{object-position:center 10%}
+@media(max-width:734px){.mi--lambo2{height:280px}}
+
+.mi--sneakers{height:320px}
+.mi--sneakers img{object-position:center 15%}
+@media(max-width:734px){.mi--sneakers{height:280px}}
+
+/* Row 3: computer setup (wide, landscape source image) */
+.mi--setup{grid-column:span 3;height:300px}
+.mi--setup img{object-position:55% 30%}
+@media(max-width:734px){.mi--setup{grid-column:span 2;height:240px}}
+@media(max-width:480px){.mi--setup{grid-column:span 1;height:280px}}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rvs{opacity:0;transform:translateY(20px) scale(.98);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rvs.v{opacity:1;transform:none}
+
+/* Context labels */
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">MOMENTS SECTION</div>
+<a href="/preview/" class="back">workspace</a>
+
+<div class="above-section">Bio section ends above</div>
+
+<!-- ═══ MOMENTS ═══ -->
+<section class="moments">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">Moments</div>
+<div class="sh-title">In the room<span class="dim">.</span></div>
+</div>
+
+<div class="mg" id="momentsGrid">
+<!-- Row 1: Stage (wide) + Fed Board -->
+<div class="mi mi--stage rvs">
+<img src="/uploads/brontalkingonstage.jpeg" alt="Daniel Bron speaking on stage">
+<div class="mi-cap"><div class="mi-cap-year">2024</div><div class="mi-cap-text">Panel discussion, LA Convention Center</div></div>
+</div>
+<div class="mi mi--fed rvs">
+<img src="/uploads/danwith_fed_board_member.Christopher_WallerJPG.jpeg" alt="With Federal Reserve Board Member Christopher Waller">
+<div class="mi-cap"><div class="mi-cap-year">2024</div><div class="mi-cap-text">With Fed Board Member Christopher Waller</div></div>
+</div>
+
+<!-- Row 2: Lambo CEOs + Sneakers -->
+<div class="mi mi--lambo1 rvs">
+<img src="/uploads/bronandlamboceoandreabaldi_ceooflamboamericas_.jpg.jpeg" alt="With Lamborghini Americas CEO Andrea Baldi">
+<div class="mi-cap"><div class="mi-cap-year">2019</div><div class="mi-cap-text">With Lamborghini Americas CEO Andrea Baldi</div></div>
+</div>
+<div class="mi mi--lambo2 rvs">
+<img src="/uploads/dan_with_worldwide_lambo_ceo_stephen_w.JPG.jpeg" alt="With Lamborghini CEO Stephan Winkelmann">
+<div class="mi-cap"><div class="mi-cap-year">2019</div><div class="mi-cap-text">With Lamborghini CEO Stephan Winkelmann</div></div>
+</div>
+<div class="mi mi--sneakers rvs">
+<img src="/uploads/daninhisyouthsellingsneakestopost.jpeg" alt="Early days, first business ventures">
+<div class="mi-cap"><div class="mi-cap-year">2016</div><div class="mi-cap-text">First celebrity client at 14</div></div>
+</div>
+
+<!-- Row 3: Computer Setup (wide) -->
+<div class="mi mi--setup rvs">
+<img src="/uploads/12yroldbronandhiscomputersetup.jpeg" alt="First computer setup at age 12">
+<div class="mi-cap"><div class="mi-cap-year">2014</div><div class="mi-cap-text">Where it started. Age 12.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="below-section">Connect section below</div>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var sio=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting)return;
+var children=e.target.querySelectorAll('.rvs');
+children.forEach(function(c,i){c.style.transitionDelay=(i*100)+'ms';c.classList.add('v')});
+sio.unobserve(e.target);
+});
+},{threshold:.08});
+var mg=document.getElementById('momentsGrid');if(mg)sio.observe(mg);
+})();
+</script>
+</body>
+</html>

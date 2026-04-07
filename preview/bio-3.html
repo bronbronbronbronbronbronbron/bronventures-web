@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bio 3: Dossier Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ BIO 3: DOSSIER CARDS ═══
+   No paragraphs. No timeline. Instead: a grid of
+   compact data cards, each covering one chapter/facet.
+   Like a classified briefing. Pure information density. */
+.bio{padding:120px 0;position:relative}
+@media(max-width:734px){.bio{padding:80px 0}}
+
+/* Opening line */
+.bio-open{font-size:clamp(18px,2.5vw,24px);font-weight:700;letter-spacing:-.03em;line-height:1.5;color:#71717a;-webkit-text-fill-color:#71717a;margin-bottom:56px;max-width:700px}
+.bio-open strong{color:#f5f5f7;-webkit-text-fill-color:#f5f5f7;font-weight:800}
+
+/* Card grid */
+.dossier{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media(max-width:734px){.dossier{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.dossier{grid-template-columns:1fr}}
+
+.dos-card{background:#0a0a0c;border-radius:14px;padding:24px;border:1px solid rgba(255,255,255,.04);transition:border-color .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden}
+.dos-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1);pointer-events:none;background:radial-gradient(ellipse at 30% 20%,rgba(37,99,235,.05),transparent 60%)}
+.dos-card:hover{border-color:rgba(255,255,255,.06);transform:translateY(-2px)}
+.dos-card:hover::before{opacity:1}
+
+.dos-era{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:12px}
+.dos-title{font-size:16px;font-weight:800;letter-spacing:-.02em;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;margin-bottom:6px}
+.dos-text{font-size:12px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.6}
+
+/* Highlight card - spans 2 cols */
+.dos-card--wide{grid-column:span 2}
+@media(max-width:480px){.dos-card--wide{grid-column:span 1}}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rvs{opacity:0;transform:translateY(20px) scale(.98);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rvs.v{opacity:1;transform:none}
+
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">BIO 3: DOSSIER CARDS</div>
+<a href="/preview/" class="back">workspace</a>
+<div class="above-section">Featured section above</div>
+
+<section class="bio" id="about">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">About</div>
+<div class="sh-title">The record<span class="dim">.</span></div>
+</div>
+<p class="bio-open rv"><strong>Daniel Bron</strong> has been building since 12. Over a decade of ventures across marketing, fintech, AI, law, and emerging technology.</p>
+
+<div class="dossier" id="dosGrid">
+
+<div class="dos-card dos-card--wide rvs">
+<div class="dos-era">2020 - Present</div>
+<div class="dos-title">Advisory & Operations</div>
+<div class="dos-text">DeLorean, Lamborghini, Ukraine Ministry of Digital Transformation. $2.2B+ combined client valuations. Speaking at Javits Center, LA Convention Center.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">2025</div>
+<div class="dos-title">Superposition Capital</div>
+<div class="dos-text">Seed fund investing in AI for regulated industries.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">2023</div>
+<div class="dos-title">Fulcrum</div>
+<div class="dos-text">AI operations advisory. Audit to deployment in weeks.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">2022</div>
+<div class="dos-title">Solidity Law</div>
+<div class="dos-text">Financial law and regulatory compliance for the digital economy.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">2022</div>
+<div class="dos-title">Published Author</div>
+<div class="dos-text">The 4th Industrial Revolution. Innovations in decentralized systems.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">2024</div>
+<div class="dos-title">University of Miami</div>
+<div class="dos-text">Honors graduate. Presidential Award. UM Young Entrepreneurs Award.</div>
+</div>
+
+<div class="dos-card dos-card--wide rvs">
+<div class="dos-era">2014 - 2020</div>
+<div class="dos-title">The Origin</div>
+<div class="dos-text">First venture at 12. First celebrity client at 14. Marketing agency through high school and college. Built, scaled, exited companies before turning 20.</div>
+</div>
+
+<div class="dos-card rvs">
+<div class="dos-era">Recognition</div>
+<div class="dos-title">Awards & Honors</div>
+<div class="dos-text">Peter Thiel Fellow finalist. Ukraine Ministry advisor. Recognized by President Julio Frenk in State of the U Speech.</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="below-section">Moments section below</div>
+<script>
+(function(){
+var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var sio=new IntersectionObserver(function(e){e.forEach(function(e){if(!e.isIntersecting)return;var c=e.target.querySelectorAll('.rvs');c.forEach(function(el,i){el.style.transitionDelay=(i*100)+'ms';el.classList.add('v')});sio.unobserve(e.target)})},{threshold:.08});
+var dg=document.getElementById('dosGrid');if(dg)sio.observe(dg);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daniel Bron</title>
+<meta name="description" content="Daniel Bron - Entrepreneur, Operator, Investor, Researcher. Building at the intersection of technology, strategy, and execution.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:500}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* GALLERY HERO */
+.gallery-hero{min-height:100vh;position:relative;display:flex;align-items:flex-end;padding:48px;overflow:hidden}
+.gallery-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.1) 0%,rgba(0,0,0,.7) 60%,rgba(0,0,0,.95) 100%);z-index:1}
+
+/* Photo mosaic grid behind text */
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,1fr);gap:2px;opacity:.4}
+.mosaic-img{width:100%;height:100%;object-fit:cover;background:#1c1c1e}
+.mosaic-placeholder{background:linear-gradient(135deg,#111,#1a1a1e);display:flex;align-items:center;justify-content:center;font-size:14px;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;font-weight:700}
+
+.hero-text{position:relative;z-index:2;max-width:700px}
+.hero-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.hero-text h1{font-size:clamp(48px,8vw,96px);font-weight:900;letter-spacing:-.06em;line-height:.95;margin-bottom:16px;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.hero-text h1 span{display:block;background:linear-gradient(135deg,#2563eb,#818cf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-quote{font-size:clamp(15px,1.6vw,18px);color:#86868b;-webkit-text-fill-color:#86868b;line-height:1.7;max-width:460px;font-weight:500;font-style:italic}
+.hero-quote::before{content:'"';font-size:48px;font-weight:900;color:#2563eb;-webkit-text-fill-color:#2563eb;line-height:0;vertical-align:middle;margin-right:4px;opacity:.5}
+
+/* HORIZONTAL SCROLL VENTURES */
+.h-section{padding:80px 0 80px 48px;position:relative}
+@media(max-width:734px){.h-section{padding:60px 0 60px 20px}}
+.h-label{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:2.5px;color:#55555f;-webkit-text-fill-color:#55555f;margin-bottom:16px}
+.h-title{font-size:clamp(28px,4vw,42px);font-weight:900;letter-spacing:-.035em;margin-bottom:32px}
+
+.h-scroll{display:flex;gap:12px;overflow-x:auto;padding-right:48px;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scrollbar-width:none}
+.h-scroll::-webkit-scrollbar{display:none}
+
+.h-card{flex-shrink:0;width:320px;background:#1c1c1e;border-radius:18px;padding:28px;border:1px solid rgba(255,255,255,.04);transition:all .4s cubic-bezier(.22,1,.36,1);scroll-snap-align:start;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+.h-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,#2563eb,#6366f1);border-radius:18px 18px 0 0}
+.h-card::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,255,255,.03),transparent 70%);opacity:0;transition:opacity .6s;pointer-events:none}
+.h-card:hover{transform:translateY(-4px);border-color:rgba(37,99,235,.15)}
+.h-card:hover::after{opacity:1}
+.h-card-icon{font-size:32px;margin-bottom:16px}
+.h-card-name{font-size:20px;font-weight:800;letter-spacing:-.02em;margin-bottom:8px}
+.h-card-desc{font-size:13px;color:#86868b;-webkit-text-fill-color:#86868b;line-height:1.6}
+.h-card-link{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-top:16px;display:inline-flex;align-items:center;gap:4px}
+
+/* FEATURED STRIP */
+.strip{display:flex;gap:8px;padding:0 48px;flex-wrap:wrap}
+@media(max-width:734px){.strip{padding:0 20px}}
+.strip-item{background:#1c1c1e;border-radius:980px;padding:12px 24px;font-size:13px;font-weight:600;color:#86868b;-webkit-text-fill-color:#86868b;border:1px solid rgba(255,255,255,.04);transition:all .3s cubic-bezier(.22,1,.36,1);display:inline-flex;align-items:center;gap:8px}
+.strip-item:hover{border-color:rgba(37,99,235,.2);color:#eeeef0;-webkit-text-fill-color:#eeeef0;transform:translateY(-2px)}
+.strip-item .dot{width:6px;height:6px;border-radius:50%;background:#2563eb;flex-shrink:0}
+
+/* BIO PULL QUOTE */
+.pullquote{padding:80px 48px;max-width:800px;margin:0 auto}
+@media(max-width:734px){.pullquote{padding:60px 20px}}
+.pullquote p{font-size:clamp(18px,2.5vw,24px);font-weight:600;letter-spacing:-.02em;line-height:1.6;color:#a1a1aa;-webkit-text-fill-color:#a1a1aa}
+.pullquote p strong{color:#f5f5f7;-webkit-text-fill-color:#f5f5f7;font-weight:800}
+.pullquote .accent-line{width:60px;height:3px;background:linear-gradient(90deg,#2563eb,#6366f1);border-radius:3px;margin-bottom:24px}
+
+/* ICON LINKS */
+.icon-links{padding:48px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+@media(max-width:734px){.icon-links{padding:48px 20px;gap:12px}}
+.icon-link{width:56px;height:56px;background:#1c1c1e;border-radius:14px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.04);transition:all .3s cubic-bezier(.22,1,.36,1);position:relative}
+.icon-link:hover{border-color:rgba(37,99,235,.2);transform:translateY(-4px);background:#222224}
+.icon-link svg{width:22px;height:22px;fill:#86868b;transition:fill .3s}
+.icon-link:hover svg{fill:#eeeef0}
+.icon-link .tooltip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#1c1c1e;border:1px solid rgba(255,255,255,.08);border-radius:6px;padding:4px 10px;font-size:10px;font-weight:700;color:#eeeef0;-webkit-text-fill-color:#eeeef0;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s}
+.icon-link:hover .tooltip{opacity:1}
+.icon-link .emoji{font-size:24px}
+
+.divider{height:1px;background:rgba(255,255,255,.06);margin:0 48px}
+@media(max-width:734px){.divider{margin:0 20px}}
+
+footer{text-align:center;padding:48px 24px;border-top:1px solid rgba(255,255,255,.04)}
+footer p{font-size:11px;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;letter-spacing:.15em}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-color:rgba(37,99,235,.2)}
+</style>
+</head>
+<body>
+
+<a href="/" class="back">← Preview Lab</a>
+
+<!-- GALLERY HERO -->
+<section class="gallery-hero">
+<div class="mosaic">
+<div class="mosaic-placeholder">Photo 1</div>
+<div class="mosaic-placeholder">Photo 2</div>
+<div class="mosaic-placeholder">Photo 3</div>
+<div class="mosaic-placeholder">Photo 4</div>
+<div class="mosaic-placeholder">Photo 5</div>
+<div class="mosaic-placeholder">Photo 6</div>
+</div>
+<div class="hero-text">
+<div class="hero-label">Daniel Bron</div>
+<h1>Build.<br><span>Execute.<br>Repeat.</span></h1>
+<div class="hero-quote">Practical innovation matters more than hype, and execution is what makes ideas real.</div>
+</div>
+</section>
+
+<!-- VENTURES HORIZONTAL SCROLL -->
+<section class="h-section rv">
+<div class="h-label">Ventures</div>
+<div class="h-title">What I build.</div>
+<div class="h-scroll">
+<a href="https://superpositioncap.com" target="_blank" class="h-card">
+<div>
+<div class="h-card-icon">◐</div>
+<div class="h-card-name">Superposition Capital</div>
+<div class="h-card-desc">$5M seed fund investing in AI for regulated industries. Partnering with founders building infrastructure that works.</div>
+</div>
+<div class="h-card-link">superpositioncap.com →</div>
+</a>
+<a href="https://askfulcrum.com" target="_blank" class="h-card">
+<div>
+<div class="h-card-icon">⚡</div>
+<div class="h-card-name">Fulcrum</div>
+<div class="h-card-desc">Custom AI systems for operations teams. From audit to deployment in weeks. Built for regulated industries.</div>
+</div>
+<div class="h-card-link">askfulcrum.com →</div>
+</a>
+<a href="https://solidity.law" target="_blank" class="h-card">
+<div>
+<div class="h-card-icon">§</div>
+<div class="h-card-name">Solidity Law</div>
+<div class="h-card-desc">Blockchain legal services. Financial law, regulatory compliance, technology law for the digital economy.</div>
+</div>
+<div class="h-card-link">solidity.law →</div>
+</a>
+<a href="https://lavr-int.com" target="_blank" class="h-card">
+<div>
+<div class="h-card-icon">◆</div>
+<div class="h-card-name">Lavr International</div>
+<div class="h-card-desc">Security consulting and logistical support. Coast to coast and beyond. Any environment, any scenario.</div>
+</div>
+<div class="h-card-link">lavr-int.com →</div>
+</a>
+<a href="https://cal.com/daniel-bron-lfpkai" target="_blank" class="h-card">
+<div>
+<div class="h-card-icon">📅</div>
+<div class="h-card-name">Book a Call</div>
+<div class="h-card-desc">15 minutes. No pitch. Just a conversation about what you're building or where you need help.</div>
+</div>
+<div class="h-card-link">cal.com →</div>
+</a>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- FEATURED STRIP -->
+<section style="padding:48px 0" class="rv">
+<div style="padding:0 48px;margin-bottom:20px">
+<div class="h-label">Featured</div>
+</div>
+<div class="strip">
+<a href="https://builtin.com/artificial-intelligence/neuromorphic-computing" target="_blank" class="strip-item"><span class="dot"></span> Built In - Neuromorphic Computing</a>
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="strip-item"><span class="dot"></span> The 4th Industrial Revolution - Book</a>
+<a href="https://linkedin.com/in/dbron" target="_blank" class="strip-item"><span class="dot"></span> Chain Reaction Newsletter - 886+ Subscribers</a>
+<span class="strip-item"><span class="dot"></span> MIT Task Force on Generative AI in Law</span>
+<span class="strip-item"><span class="dot"></span> Peter Thiel Fellow Finalist</span>
+<span class="strip-item"><span class="dot"></span> Ukraine Ministry Recognition</span>
+</div>
+</section>
+
+<div class="divider"></div>
+
+<!-- PULL QUOTE BIO -->
+<section class="pullquote rv">
+<div class="accent-line"></div>
+<p><strong>Daniel Bron</strong> is an American entrepreneur, operator, researcher, and investor focused on turning complex technologies into real businesses, systems, and strategic outcomes. He launched his first venture at 12 and has spent the past decade building across marketing, design, development, fintech, AI, and emerging technology. Today he leads <strong>Fulcrum</strong> and <strong>Superposition Capital</strong>, working at the intersection of research-led strategic advisory, company building, and investment.</p>
+</section>
+
+<div class="divider"></div>
+
+<!-- ICON LINKS -->
+<section class="icon-links rv">
+<a href="https://linkedin.com/in/dbron" target="_blank" class="icon-link">
+<span class="tooltip">LinkedIn</span>
+<svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+</a>
+<a href="https://instagram.com/broninc" target="_blank" class="icon-link">
+<span class="tooltip">Instagram</span>
+<svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+</a>
+<a href="https://superpositioncap.com" target="_blank" class="icon-link">
+<span class="tooltip">Superposition Capital</span>
+<span class="emoji">◐</span>
+</a>
+<a href="https://askfulcrum.com" target="_blank" class="icon-link">
+<span class="tooltip">Fulcrum</span>
+<span class="emoji">⚡</span>
+</a>
+<a href="https://solidity.law" target="_blank" class="icon-link">
+<span class="tooltip">Solidity Law</span>
+<span class="emoji">§</span>
+</a>
+<a href="https://lavr-int.com" target="_blank" class="icon-link">
+<span class="tooltip">Lavr</span>
+<span class="emoji">◆</span>
+</a>
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="icon-link">
+<span class="tooltip">Book</span>
+<span class="emoji">📖</span>
+</a>
+<a href="https://cal.com/daniel-bron-lfpkai" target="_blank" class="icon-link">
+<span class="tooltip">Book a Call</span>
+<span class="emoji">📅</span>
+</a>
+</section>
+
+<footer>
+<p>© 2026 Daniel Bron. All rights reserved.</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver((entries)=>{
+entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bio 2: Timeline Only</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ BIO 2: TIMELINE ONLY ═══
+   Kill the body text entirely. Let the timeline tell the story.
+   Horizontal layout: year on left, description on right.
+   Full width. Each entry is its own row. The dates speak. */
+.bio{padding:120px 0;position:relative}
+@media(max-width:734px){.bio{padding:80px 0}}
+
+.tl-rows{position:relative}
+.tl-rows::before{content:'';position:absolute;left:88px;top:0;bottom:0;width:1px;background:linear-gradient(180deg,#2563eb,rgba(37,99,235,.04))}
+@media(max-width:580px){.tl-rows::before{left:68px}}
+
+.tl-row{display:flex;align-items:baseline;gap:40px;padding:18px 0;position:relative;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.tl-row:hover{background:rgba(255,255,255,.01);border-radius:8px}
+@media(max-width:580px){.tl-row{gap:24px}}
+
+.tl-row::before{content:'';position:absolute;left:85px;top:26px;width:7px;height:7px;border-radius:50%;background:#000;border:2px solid #2563eb;z-index:1;transition:background .3s,transform .3s cubic-bezier(.22,1,.36,1)}
+.tl-row:hover::before{background:#2563eb;transform:scale(1.3)}
+@media(max-width:580px){.tl-row::before{left:65px}}
+
+.tl-year{font-size:clamp(28px,4vw,40px);font-weight:900;letter-spacing:-.05em;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;width:80px;flex-shrink:0;text-align:right;transition:color .4s,-webkit-text-fill-color .4s}
+.tl-row:hover .tl-year{color:#2563eb;-webkit-text-fill-color:#2563eb}
+@media(max-width:580px){.tl-year{width:60px;font-size:24px}}
+
+.tl-content{padding-left:28px}
+.tl-headline{font-size:17px;font-weight:800;letter-spacing:-.02em;color:#86868b;-webkit-text-fill-color:#86868b;margin-bottom:4px;transition:color .3s,-webkit-text-fill-color .3s}
+.tl-row:hover .tl-headline{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+.tl-sub{font-size:12px;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;line-height:1.5;transition:color .3s,-webkit-text-fill-color .3s}
+.tl-row:hover .tl-sub{color:#55555f;-webkit-text-fill-color:#55555f}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rv-d1{transition-delay:.05s}.rv-d2{transition-delay:.1s}.rv-d3{transition-delay:.15s}.rv-d4{transition-delay:.2s}.rv-d5{transition-delay:.25s}.rv-d6{transition-delay:.3s}.rv-d7{transition-delay:.35s}.rv-d8{transition-delay:.4s}
+
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">BIO 2: TIMELINE ONLY</div>
+<a href="/preview/" class="back">workspace</a>
+<div class="above-section">Featured section above</div>
+
+<section class="bio" id="about">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">About</div>
+<div class="sh-title">The timeline<span class="dim">.</span></div>
+</div>
+<div class="tl-rows">
+<div class="tl-row rv rv-d1">
+<div class="tl-year">2025</div>
+<div class="tl-content"><div class="tl-headline">Superposition Capital</div><div class="tl-sub">Seed fund launched. AI for regulated industries.</div></div>
+</div>
+<div class="tl-row rv rv-d2">
+<div class="tl-year">2024</div>
+<div class="tl-content"><div class="tl-headline">University of Miami</div><div class="tl-sub">Honors graduate. Presidential Award.</div></div>
+</div>
+<div class="tl-row rv rv-d3">
+<div class="tl-year">2023</div>
+<div class="tl-content"><div class="tl-headline">Fulcrum</div><div class="tl-sub">AI operations advisory founded.</div></div>
+</div>
+<div class="tl-row rv rv-d4">
+<div class="tl-year">2022</div>
+<div class="tl-content"><div class="tl-headline">Published Author</div><div class="tl-sub">The 4th Industrial Revolution. Solidity Law. Peter Thiel Fellow finalist.</div></div>
+</div>
+<div class="tl-row rv rv-d5">
+<div class="tl-year">2021</div>
+<div class="tl-content"><div class="tl-headline">Celebrity Law</div><div class="tl-sub">Legal advisory for entertainment industry clients.</div></div>
+</div>
+<div class="tl-row rv rv-d6">
+<div class="tl-year">2020</div>
+<div class="tl-content"><div class="tl-headline">DeLorean, Lamborghini</div><div class="tl-sub">Marketing and advisory. $2.2B+ combined client valuations.</div></div>
+</div>
+<div class="tl-row rv rv-d7">
+<div class="tl-year">2016</div>
+<div class="tl-content"><div class="tl-headline">First Celebrity Client</div><div class="tl-sub">Marketing agency at 14.</div></div>
+</div>
+<div class="tl-row rv rv-d8">
+<div class="tl-year">2014</div>
+<div class="tl-content"><div class="tl-headline">First Venture</div><div class="tl-sub">Started building at 12.</div></div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="below-section">Moments section below</div>
+<script>
+(function(){var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})})();
+</script>
+</body>
+</html>

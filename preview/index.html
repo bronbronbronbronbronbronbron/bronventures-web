@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BV Workspace</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Inter,-apple-system,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;min-height:100vh;padding:60px 24px}
+h1{font-size:28px;font-weight:900;letter-spacing:-.03em;margin-bottom:4px}
+.sub{color:#55555f;-webkit-text-fill-color:#55555f;font-size:13px;margin-bottom:12px}
+.prod-link{font-size:12px;color:#2563eb;-webkit-text-fill-color:#2563eb;font-weight:600;margin-bottom:40px;display:inline-block}
+.section-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:2px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px;margin-top:40px}
+.section-label:first-of-type{margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.card{background:#0a0a0c;border:1px solid rgba(255,255,255,.04);border-radius:14px;padding:24px;transition:all .3s;display:block;color:inherit;-webkit-text-fill-color:inherit}
+.card:hover{border-color:rgba(37,99,235,.15);transform:translateY(-2px)}
+.card h2{font-size:15px;font-weight:800;margin-bottom:6px;letter-spacing:-.02em}
+.card p{font-size:12px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.6}
+.tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#55555f;-webkit-text-fill-color:#55555f;margin-bottom:10px}
+.tag.wip{color:#f59e0b;-webkit-text-fill-color:#f59e0b}
+</style>
+</head>
+<body>
+<h1>BV Workspace</h1>
+<p class="sub">Section-by-section editing for bronventures.com</p>
+<a href="/" class="prod-link">View production site &#8594;</a>
+
+<div class="section-label">Hero Options (pick one)</div>
+<div class="grid">
+<a href="/preview/hero-1.html" class="card">
+<div class="tag wip">OPTION 1</div>
+<h2>Name + Data / Venture Strip</h2>
+<p>Massive centered name. Data rows underneath (role, based, focus). Scrolling venture logo strip as section divider. No photos.</p>
+</a>
+<a href="/preview/hero-2.html" class="card">
+<div class="tag wip">OPTION 2</div>
+<h2>Name + Data / Clean Break</h2>
+<p>Left-aligned massive name. 2-column data grid below. Abstract concentric circle accent on right. Clean line divider. No strip, no photos.</p>
+</a>
+</div>
+
+<div class="section-label" style="margin-top:48px">Nebula Variations (pick one)</div>
+<div class="grid">
+<a href="/preview/neb-1.html" class="card">
+<div class="tag wip">NEBULA 1</div>
+<h2>Deep Field</h2>
+<p>7-layer depth stack: huge blurry far blobs, medium mid-layer, sharp bright near-dots, pulsing core. Like Hubble deep field photography. Contained cluster shape.</p>
+</a>
+<a href="/preview/neb-2.html" class="card">
+<div class="tag wip">NEBULA 2</div>
+<h2>Aurora Drift</h2>
+<p>Horizontal ribbons that undulate like aurora borealis. 9 layers from soft wide bands to thin bright threads. Fills the right half with flowing energy. Cinematic.</p>
+</a>
+<a href="/preview/neb-3.html" class="card">
+<div class="tag wip">NEBULA 3</div>
+<h2>Quantum Haze</h2>
+<p>Canvas-rendered particle field. 120 dots drift and pulse, connected by faint lines when close. Reacts to mouse movement. Superposition/quantum physics energy. Interactive.</p>
+</a>
+</div>
+
+<div class="section-label" style="margin-top:48px">Featured Options (pick one)</div>
+<div class="grid">
+<a href="/preview/featured-1.html" class="card">
+<div class="tag wip">FEATURED 1</div>
+<h2>Clean List (5 items)</h2>
+<p>Same list format, hover fixed (bg highlight instead of padding shift). MIT removed. Added Speaker + NSU Law as static credential entries.</p>
+</a>
+<a href="/preview/featured-2.html" class="card">
+<div class="tag wip">FEATURED 2</div>
+<h2>Minimal (3 links)</h2>
+<p>Stripped down. No tags/pills. Just title left, source right. Only linkable items. Cleanest version.</p>
+</a>
+<a href="/preview/featured-3.html" class="card">
+<div class="tag wip">FEATURED 3</div>
+<h2>Cards (3 bento tiles)</h2>
+<p>3 horizontal mini bento cards matching ventures aesthetic. Tag at top, title, description, link. Most visual weight.</p>
+</a>
+</div>
+
+<div class="section-label" style="margin-top:48px">Bio Options (pick one)</div>
+<div class="grid">
+<a href="/preview/bio-1.html" class="card">
+<div class="tag wip">BIO 1</div>
+<h2>Editorial Split</h2>
+<p>Giant opening statement full-width, then 50/50 split: body text left, timeline right. Clean magazine layout. No stats, no pull quotes, no noise.</p>
+</a>
+<a href="/preview/bio-2.html" class="card">
+<div class="tag wip">BIO 2</div>
+<h2>Timeline Only</h2>
+<p>Kill the body text. Giant years on the left, headline + subtitle on the right. Each entry staggers in. Full-width rows. Let the dates speak.</p>
+</a>
+<a href="/preview/bio-3.html" class="card">
+<div class="tag wip">BIO 3</div>
+<h2>Dossier Cards</h2>
+<p>No paragraphs. Bento grid of compact data cards, each covering one chapter. Wide cards for major eras, single cards for specifics. Classified briefing energy.</p>
+</a>
+</div>
+
+<div class="section-label" style="margin-top:48px">Sections Done</div>
+<div class="grid">
+<a href="/preview/ventures.html" class="card">
+<div class="tag">PUSHED</div>
+<h2>Ventures - Perfected</h2>
+<p>In prod. Aligned logos/titles, transparent SPC logo, consistent transitions.</p>
+</a>
+<a href="/preview/moments.html" class="card">
+<div class="tag">PUSHED</div>
+<h2>Moments (Photo Grid)</h2>
+<p>In prod. 6 photos, asymmetric grid, proper cropping.</p>
+</a>
+</div>
+
+<div class="section-label" style="margin-top:48px">Tools</div>
+<div class="grid">
+<a href="/upload-photos" class="card">
+<div class="tag">TOOL</div>
+<h2>Upload Files</h2>
+<p>Upload photos, 3D models, logos, or any assets to /uploads/</p>
+</a>
+</div>
+</body>
+</html>

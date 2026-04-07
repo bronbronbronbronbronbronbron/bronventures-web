@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bio 1: Editorial Split</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+
+/* ═══ BIO 1: EDITORIAL SPLIT ═══
+   Giant opening statement on top, then a 2-col layout:
+   body text left, timeline right. No stats, no pull quote.
+   The opening line IS the statement. Clean, magazine-style. */
+.bio{padding:120px 0;position:relative}
+@media(max-width:734px){.bio{padding:80px 0}}
+
+/* Giant opening line - full width */
+.bio-hero{margin-bottom:64px}
+.bio-hero h2{font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.05em;line-height:1.1;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.bio-hero h2 .muted{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* 2-col below */
+.bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+@media(max-width:900px){.bio-grid{grid-template-columns:1fr;gap:48px}}
+
+.bio-body{font-size:15px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.8;margin-bottom:20px}
+.bio-body strong{color:#a1a1aa;-webkit-text-fill-color:#a1a1aa;font-weight:700}
+
+/* Timeline */
+.timeline{position:relative;padding-left:28px}
+.timeline::before{content:'';position:absolute;left:0;top:8px;bottom:8px;width:1px;background:linear-gradient(180deg,#2563eb,rgba(37,99,235,.06))}
+.tl-item{position:relative;padding:10px 0}
+.tl-item::before{content:'';position:absolute;left:-31px;top:16px;width:7px;height:7px;border-radius:50%;background:#000;border:2px solid #2563eb;z-index:1;transition:background .3s,transform .3s cubic-bezier(.22,1,.36,1)}
+.tl-item:hover::before{background:#2563eb;transform:scale(1.3)}
+.tl-year{font-size:11px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:.5px;margin-bottom:3px}
+.tl-text{font-size:13px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.5;transition:color .3s,-webkit-text-fill-color .3s}
+.tl-item:hover .tl-text{color:#a1a1aa;-webkit-text-fill-color:#a1a1aa}
+
+.cred-badges{display:flex;flex-wrap:wrap;gap:6px;margin-top:28px}
+.cred-badge{font-size:10px;font-weight:700;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;padding:6px 14px;border-radius:980px;border:1px solid rgba(255,255,255,.04);letter-spacing:.3px;transition:all .4s cubic-bezier(.22,1,.36,1)}
+.cred-badge:hover{border-color:rgba(37,99,235,.15);color:#86868b;-webkit-text-fill-color:#86868b}
+
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">BIO 1: EDITORIAL SPLIT</div>
+<a href="/preview/" class="back">workspace</a>
+<div class="above-section">Featured section above</div>
+
+<section class="bio" id="about">
+<div class="w">
+<div class="bio-hero rv">
+<h2>Entrepreneur, operator, investor<span class="muted">.</span><br>Building since 12<span class="muted">.</span> Shipping since always<span class="muted">.</span></h2>
+</div>
+<div class="bio-grid">
+<div class="bio-text rv">
+<p class="bio-body">Daniel Bron launched his first venture at 12 and has spent over a decade building across marketing, design, development, fintech, AI, and emerging technology, with a consistent focus on execution that actually works.</p>
+<p class="bio-body">By his early 20s, he had already built, scaled, and exited companies, advised major brands and public institutions, and developed a reputation for operating where complexity, technology, and real-world execution meet. His work has included advising <strong>DeLorean</strong> and <strong>Ukraine's Ministry of Digital Transformation</strong>.</p>
+<p class="bio-body">Today, Daniel leads <strong>Fulcrum</strong> and <strong>Superposition Capital</strong>, sitting at the intersection of strategic advisory, company building, and investment. He has spoken at the Javits Center and LA Convention Center, and worked with companies reaching multi-billion-dollar valuations.</p>
+</div>
+<div class="bio-aside rv" style="transition-delay:.15s">
+<div class="timeline">
+<div class="tl-item"><div class="tl-year">2025</div><div class="tl-text">Superposition Capital launched.</div></div>
+<div class="tl-item"><div class="tl-year">2024</div><div class="tl-text">UM honors graduate.</div></div>
+<div class="tl-item"><div class="tl-year">2023</div><div class="tl-text">Fulcrum founded.</div></div>
+<div class="tl-item"><div class="tl-year">2022</div><div class="tl-text">Published book. Solidity Law. Thiel Fellow finalist.</div></div>
+<div class="tl-item"><div class="tl-year">2021</div><div class="tl-text">Celebrity law and advisory.</div></div>
+<div class="tl-item"><div class="tl-year">2020</div><div class="tl-text">DeLorean, Lamborghini. $2.2B+ valuations.</div></div>
+<div class="tl-item"><div class="tl-year">2016</div><div class="tl-text">First celebrity client at 14.</div></div>
+<div class="tl-item"><div class="tl-year">2014</div><div class="tl-text">First venture at 12.</div></div>
+</div>
+<div class="cred-badges">
+<span class="cred-badge">Peter Thiel Fellow Finalist</span>
+<span class="cred-badge">Ukraine Ministry</span>
+<span class="cred-badge">Recognized by President Julio Frenk in State of the U Speech</span>
+<span class="cred-badge">Young Entrepreneurs Award</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<div class="below-section">Moments section below</div>
+<script>
+(function(){var io=new IntersectionObserver(function(e){e.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});document.querySelectorAll('.rv').forEach(function(el){io.observe(el)})})();
+</script>
+</body>
+</html>

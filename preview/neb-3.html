@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nebula 3: Quantum Haze</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.hero{min-height:100vh;display:flex;align-items:center;padding:0 80px;position:relative;overflow:hidden}
+@media(max-width:734px){.hero{padding:100px 24px 60px;min-height:100svh;flex-direction:column;justify-content:center}}
+.hero-inner{max-width:600px;opacity:0;animation:fadeIn .8s cubic-bezier(.22,1,.36,1) .15s forwards;position:relative;z-index:2}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.hero-name{font-size:clamp(56px,10vw,120px);font-weight:900;letter-spacing:-.07em;line-height:.88;margin-bottom:32px}
+.hero-name .dot{color:#2563eb;-webkit-text-fill-color:#2563eb}
+.hero-data{display:grid;grid-template-columns:1fr 1fr;gap:0 40px;margin-bottom:32px}
+@media(max-width:580px){.hero-data{grid-template-columns:1fr}}
+.hd-row{display:flex;flex-direction:column;gap:3px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.hd-label{font-size:9px;font-weight:700;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;text-transform:uppercase;letter-spacing:1.5px}
+.hd-value{font-size:14px;font-weight:600;color:#86868b;-webkit-text-fill-color:#86868b}
+.hd-value a{color:#2563eb;-webkit-text-fill-color:#2563eb;transition:opacity .3s}
+.hd-value a:hover{opacity:.7}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn-p{background:linear-gradient(135deg,#2563eb,#6366f1);color:#fff;-webkit-text-fill-color:#fff;padding:14px 28px;border-radius:10px;font-size:14px;font-weight:600;transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(37,99,235,.3)}
+.btn-gh{color:#71717a;-webkit-text-fill-color:#71717a;padding:14px 24px;border-radius:10px;font-size:14px;font-weight:600;border:1px solid rgba(255,255,255,.06);transition:all .3s cubic-bezier(.22,1,.36,1)}
+.btn-gh:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-color:rgba(99,102,241,.2);transform:translateY(-2px)}
+
+/* ═══ NEBULA 3: QUANTUM HAZE ═══
+   Canvas-rendered particle field with soft glow connections.
+   Hundreds of micro-dots drift slowly, occasionally flaring.
+   Connects to the "Superposition" quantum physics branding.
+   Feels like looking at probability clouds / wave functions.
+   Interactive: particles subtly react to mouse position. */
+.neb-canvas{position:absolute;right:0;top:0;width:55%;height:100%;opacity:0;animation:nebIn 2s cubic-bezier(.22,1,.36,1) .3s forwards}
+@keyframes nebIn{from{opacity:0}to{opacity:1}}
+@media(max-width:900px){.neb-canvas{width:100%;opacity:.4}}
+
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">NEBULA 3: QUANTUM HAZE</div>
+<a href="/preview/" class="back">all options</a>
+
+<section class="hero">
+<div class="hero-inner">
+<div class="hero-name">Daniel<br>Bron<span class="dot">.</span></div>
+<div class="hero-data">
+<div class="hd-row"><span class="hd-label">Role</span><span class="hd-value">Entrepreneur, Operator, Investor</span></div>
+<div class="hd-row"><span class="hd-label">Based</span><span class="hd-value">Miami, FL</span></div>
+<div class="hd-row"><span class="hd-label">Current</span><span class="hd-value"><a href="https://superpositioncap.com" target="_blank">Superposition</a>, <a href="https://askfulcrum.com" target="_blank">Fulcrum</a></span></div>
+<div class="hd-row"><span class="hd-label">Focus</span><span class="hd-value">AI, Regulated Industries, Legal Tech</span></div>
+</div>
+<div class="hero-cta">
+<a href="https://linkedin.com/in/dbron" target="_blank" class="btn-p">LinkedIn</a>
+<a href="https://instagram.com/broninc" target="_blank" class="btn-gh">@broninc</a>
+<a href="https://cal.com/daniel-bron-lfpkai" target="_blank" class="btn-gh">Book a Call</a>
+</div>
+</div>
+
+<canvas class="neb-canvas" id="qCanvas"></canvas>
+</section>
+
+<script>
+(function(){
+var c=document.getElementById('qCanvas');
+var ctx=c.getContext('2d');
+var mx=0,my=0,W,H,dpr=Math.min(window.devicePixelRatio||1,2);
+var particles=[];
+var N=120;
+
+function resize(){
+var r=c.parentElement.getBoundingClientRect();
+W=c.offsetWidth;H=c.offsetHeight;
+c.width=W*dpr;c.height=H*dpr;
+ctx.scale(dpr,dpr);
+}
+resize();
+window.addEventListener('resize',resize);
+
+// Mouse tracking
+c.addEventListener('mousemove',function(e){
+var r=c.getBoundingClientRect();
+mx=e.clientX-r.left;my=e.clientY-r.top;
+});
+c.addEventListener('mouseleave',function(){mx=0;my=0});
+
+// Particle init
+for(var i=0;i<N;i++){
+particles.push({
+x:Math.random()*1200,
+y:Math.random()*900,
+vx:(Math.random()-.5)*.3,
+vy:(Math.random()-.5)*.3,
+r:Math.random()*2+.5,
+a:Math.random()*.3+.05,
+pulse:Math.random()*Math.PI*2,
+pulseSpeed:Math.random()*.02+.005,
+// Color variation in blue range
+hue:220+Math.random()*30,
+sat:60+Math.random()*30
+});
+}
+
+function draw(){
+ctx.clearRect(0,0,W,H);
+
+// Central glow
+var grd=ctx.createRadialGradient(W*.5,H*.5,0,W*.5,H*.5,W*.4);
+grd.addColorStop(0,'rgba(37,99,235,.06)');
+grd.addColorStop(.5,'rgba(99,102,241,.03)');
+grd.addColorStop(1,'transparent');
+ctx.fillStyle=grd;
+ctx.fillRect(0,0,W,H);
+
+// Update + draw particles
+for(var i=0;i<N;i++){
+var p=particles[i];
+p.pulse+=p.pulseSpeed;
+var pa=p.a*(1+Math.sin(p.pulse)*.5);
+
+// Mouse influence
+if(mx>0&&my>0){
+var dx=p.x-mx,dy=p.y-my;
+var dist=Math.sqrt(dx*dx+dy*dy);
+if(dist<200){
+var force=.15*(1-dist/200);
+p.vx+=dx/dist*force;
+p.vy+=dy/dist*force;
+}
+}
+
+// Damping
+p.vx*=.995;p.vy*=.995;
+
+p.x+=p.vx;p.y+=p.vy;
+
+// Wrap
+if(p.x<-20)p.x=W+20;if(p.x>W+20)p.x=-20;
+if(p.y<-20)p.y=H+20;if(p.y>H+20)p.y=-20;
+
+// Draw glow
+var gr=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*8);
+gr.addColorStop(0,'hsla('+p.hue+','+p.sat+'%,65%,'+pa*1.5+')');
+gr.addColorStop(1,'transparent');
+ctx.fillStyle=gr;
+ctx.fillRect(p.x-p.r*8,p.y-p.r*8,p.r*16,p.r*16);
+
+// Draw dot
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+ctx.fillStyle='hsla('+p.hue+','+p.sat+'%,75%,'+pa+')';
+ctx.fill();
+}
+
+// Draw connections (nearby particles)
+ctx.lineWidth=.5;
+for(var i=0;i<N;i++){
+for(var j=i+1;j<N;j++){
+var dx=particles[i].x-particles[j].x;
+var dy=particles[i].y-particles[j].y;
+var dist=Math.sqrt(dx*dx+dy*dy);
+if(dist<100){
+var la=(1-dist/100)*.08;
+ctx.strokeStyle='rgba(129,140,248,'+la+')';
+ctx.beginPath();
+ctx.moveTo(particles[i].x,particles[i].y);
+ctx.lineTo(particles[j].x,particles[j].y);
+ctx.stroke();
+}
+}
+}
+
+requestAnimationFrame(draw);
+}
+draw();
+})();
+</script>
+</body>
+</html>

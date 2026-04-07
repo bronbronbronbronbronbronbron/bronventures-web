@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Featured 3: Cards</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ FEATURED 3: HORIZONTAL CARDS ═══
+   3 cards in a row. Each one is a mini bento tile
+   matching the ventures section aesthetic. Tag at top,
+   title, subtle description. Consistent with the rest. */
+.featured{padding:100px 0}
+@media(max-width:734px){.featured{padding:72px 0}}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+@media(max-width:734px){.feat-grid{grid-template-columns:1fr}}
+
+.feat-card{background:#0a0a0c;border-radius:18px;padding:28px;border:1px solid rgba(255,255,255,.04);display:flex;flex-direction:column;transition:border-color .5s cubic-bezier(.22,1,.36,1),transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s cubic-bezier(.22,1,.36,1);position:relative;overflow:hidden;min-height:200px}
+.feat-card::before{content:'';position:absolute;inset:0;opacity:0;transition:opacity .5s cubic-bezier(.22,1,.36,1);pointer-events:none;background:radial-gradient(ellipse at 50% 30%,rgba(37,99,235,.06),transparent 60%)}
+.feat-card:hover{border-color:rgba(255,255,255,.08);transform:translateY(-3px);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+.feat-card:hover::before{opacity:1}
+
+.fc-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:auto}
+.fc-title{font-size:17px;font-weight:800;letter-spacing:-.02em;color:#d4d4d8;-webkit-text-fill-color:#d4d4d8;margin-bottom:6px;transition:color .3s,-webkit-text-fill-color .3s}
+.feat-card:hover .fc-title{color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.fc-desc{font-size:12px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.6;margin-bottom:12px}
+.fc-url{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;display:inline-flex;align-items:center;gap:6px;transition:gap .4s cubic-bezier(.22,1,.36,1)}
+.feat-card:hover .fc-url{gap:10px}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rvs{opacity:0;transform:translateY(20px) scale(.98);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.rvs.v{opacity:1;transform:none}
+
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">FEATURED 3: CARDS</div>
+<a href="/preview/" class="back">workspace</a>
+
+<div class="above-section">Ventures section above</div>
+
+<section class="featured">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">Featured</div>
+<div class="sh-title">In the field<span class="dim">.</span></div>
+</div>
+<div class="feat-grid" id="featGrid">
+
+<a href="https://builtin.com/artificial-intelligence/neuromorphic-computing" target="_blank" class="feat-card rvs">
+<div class="fc-tag">Expert Commentary</div>
+<div class="fc-title">Neuromorphic Computing</div>
+<div class="fc-desc">Featured in Built In on the future of brain-inspired computing architectures.</div>
+<div class="fc-url">Read on Built In &#8594;</div>
+</a>
+
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="feat-card rvs">
+<div class="fc-tag">Published Author</div>
+<div class="fc-title">The 4th Industrial Revolution</div>
+<div class="fc-desc">Innovations in decentralized systems and their impact on regulated industries.</div>
+<div class="fc-url">View on Amazon &#8594;</div>
+</a>
+
+<a href="https://linkedin.com/in/dbron" target="_blank" class="feat-card rvs">
+<div class="fc-tag">Newsletter</div>
+<div class="fc-title">Chain Reaction</div>
+<div class="fc-desc">886+ subscribers. Weekly analysis on AI, regulation, and technology infrastructure.</div>
+<div class="fc-url">Subscribe on LinkedIn &#8594;</div>
+</a>
+
+</div>
+</div>
+</section>
+
+<div class="below-section">Bio section below</div>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+var sio=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(!e.isIntersecting)return;
+var children=e.target.querySelectorAll('.rvs');
+children.forEach(function(c,i){c.style.transitionDelay=(i*120)+'ms';c.classList.add('v')});
+sio.unobserve(e.target);
+});
+},{threshold:.08});
+var fg=document.getElementById('featGrid');if(fg)sio.observe(fg);
+})();
+</script>
+</body>
+</html>

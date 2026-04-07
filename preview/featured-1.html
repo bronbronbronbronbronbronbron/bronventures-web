@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Featured 1: Clean List</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:#000;color:#eeeef0;-webkit-text-fill-color:#eeeef0;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+::selection{background:rgba(37,99,235,.3)}
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.w{max-width:1100px;margin:0 auto;padding:0 80px}
+@media(max-width:900px){.w{padding:0 24px}}
+.sh{margin-bottom:56px}
+.sh-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:3px;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-bottom:16px}
+.sh-title{font-size:clamp(32px,4vw,48px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
+.sh-title .dim{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+
+/* ═══ FEATURED 1: CLEAN LIST ═══
+   Same text list concept but hover fixed (no jitter),
+   MIT removed, added NSU Law + Speaker entries.
+   Arrow slides smoothly, no padding shift. */
+.featured{padding:100px 0}
+@media(max-width:734px){.featured{padding:72px 0}}
+.feat-items{display:flex;flex-direction:column;gap:0}
+.feat-item{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.04);transition:background .4s cubic-bezier(.22,1,.36,1);position:relative;margin:0 -12px;padding-left:12px;padding-right:12px;border-radius:8px}
+.feat-item:first-child{border-top:1px solid rgba(255,255,255,.04)}
+.feat-item:hover{background:rgba(255,255,255,.02)}
+.feat-left{display:flex;align-items:center;gap:16px;min-width:0}
+.feat-tag{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#2563eb;-webkit-text-fill-color:#2563eb;padding:5px 12px;border-radius:980px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.12);flex-shrink:0;transition:background .3s}
+.feat-item:hover .feat-tag{background:rgba(37,99,235,.14)}
+.feat-title{font-size:15px;font-weight:700;color:#a1a1aa;-webkit-text-fill-color:#a1a1aa;letter-spacing:-.02em;transition:color .3s,-webkit-text-fill-color .3s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.feat-item:hover .feat-title{color:#e4e4e7;-webkit-text-fill-color:#e4e4e7}
+.feat-arrow{font-size:14px;color:#3a3a3e;-webkit-text-fill-color:#3a3a3e;transition:color .3s cubic-bezier(.22,1,.36,1),-webkit-text-fill-color .3s,transform .3s cubic-bezier(.22,1,.36,1);flex-shrink:0;margin-left:16px}
+.feat-item:hover .feat-arrow{color:#2563eb;-webkit-text-fill-color:#2563eb;transform:translateX(4px)}
+/* No-link items */
+.feat-item--static{cursor:default}
+.feat-item--static .feat-arrow{opacity:0}
+.feat-item--static .feat-tag{background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.06);color:#55555f;-webkit-text-fill-color:#55555f}
+
+/* Reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.v{opacity:1;transform:none}
+.rv-d1{transition-delay:.05s}.rv-d2{transition-delay:.1s}.rv-d3{transition-delay:.15s}.rv-d4{transition-delay:.2s}.rv-d5{transition-delay:.25s}
+
+.above-section{padding:100px 80px 40px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-bottom:1px solid rgba(255,255,255,.03)}
+@media(max-width:734px){.above-section{padding:60px 24px 32px}}
+.below-section{padding:40px 80px 100px;color:#1c1c1e;-webkit-text-fill-color:#1c1c1e;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;text-align:center;border-top:1px solid rgba(255,255,255,.03)}
+.option-label{position:fixed;bottom:16px;left:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;z-index:100}
+.back{position:fixed;bottom:16px;right:16px;background:#1c1c1e;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:10px 16px;font-size:11px;font-weight:700;color:#55555f;-webkit-text-fill-color:#55555f;z-index:100;transition:all .3s}
+.back:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0}
+</style>
+</head>
+<body>
+<div class="option-label">FEATURED 1: CLEAN LIST (5 items)</div>
+<a href="/preview/" class="back">workspace</a>
+
+<div class="above-section">Ventures section above</div>
+
+<section class="featured">
+<div class="w">
+<div class="sh rv">
+<div class="sh-label">Featured</div>
+<div class="sh-title">In the field<span class="dim">.</span></div>
+</div>
+<div class="feat-items">
+
+<a href="https://builtin.com/artificial-intelligence/neuromorphic-computing" target="_blank" class="feat-item rv rv-d1">
+<div class="feat-left">
+<span class="feat-tag">Built In</span>
+<span class="feat-title">Neuromorphic Computing - Expert Commentary</span>
+</div>
+<span class="feat-arrow">&#8594;</span>
+</a>
+
+<a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" class="feat-item rv rv-d2">
+<div class="feat-left">
+<span class="feat-tag">Book</span>
+<span class="feat-title">The 4th Industrial Revolution - Innovations in Decentralized Systems</span>
+</div>
+<span class="feat-arrow">&#8594;</span>
+</a>
+
+<a href="https://linkedin.com/in/dbron" target="_blank" class="feat-item rv rv-d3">
+<div class="feat-left">
+<span class="feat-tag">Newsletter</span>
+<span class="feat-title">Chain Reaction - 886+ Subscribers</span>
+</div>
+<span class="feat-arrow">&#8594;</span>
+</a>
+
+<div class="feat-item feat-item--static rv rv-d4">
+<div class="feat-left">
+<span class="feat-tag">Speaker</span>
+<span class="feat-title">Panels on AI, blockchain, and regulated industries</span>
+</div>
+<span class="feat-arrow">&#8594;</span>
+</div>
+
+<div class="feat-item feat-item--static rv rv-d5">
+<div class="feat-left">
+<span class="feat-tag">Law</span>
+<span class="feat-title">NSU Shepard Broad College of Law - J.D. Candidate</span>
+</div>
+<span class="feat-arrow">&#8594;</span>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="below-section">Bio section below</div>
+
+<script>
+(function(){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('v');io.unobserve(e.target)}});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+})();
+</script>
+</body>
+</html>

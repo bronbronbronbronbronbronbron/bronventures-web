@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Logo Strip Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,sans-serif;background:#000;color:#eeeef0;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 24px}
+h2{font-size:12px;font-weight:700;color:#3a3a3e;text-transform:uppercase;letter-spacing:2px;margin-bottom:40px}
+
+/* ═══ OPTION A: Minimal line ═══ */
+.strip-a{width:100%;max-width:900px;margin-bottom:80px}
+.strip-a .logos{display:flex;align-items:center;justify-content:center;gap:48px;flex-wrap:wrap;padding:32px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04)}
+.strip-a .logos svg{height:20px;width:auto;opacity:.25;transition:opacity .5s cubic-bezier(.22,1,.36,1)}
+.strip-a .logos svg:hover{opacity:.6}
+
+/* ═══ OPTION B: With label ═══ */
+.strip-b{width:100%;max-width:900px;margin-bottom:80px}
+.strip-b .label{font-size:10px;font-weight:700;color:#2a2a2e;text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:24px}
+.strip-b .logos{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;padding:24px 0}
+.strip-b .logos svg{height:22px;width:auto;opacity:.2;transition:opacity .5s cubic-bezier(.22,1,.36,1);filter:grayscale(1)}
+.strip-b .logos svg:hover{opacity:.5}
+
+/* ═══ OPTION C: Scrolling ticker ═══ */
+.strip-c{width:100%;max-width:100%;overflow:hidden;margin-bottom:80px;padding:40px 0;border-top:1px solid rgba(255,255,255,.04);border-bottom:1px solid rgba(255,255,255,.04);mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 15%,#000 85%,transparent)}
+.ticker{display:flex;gap:64px;align-items:center;animation:tickerScroll 20s linear infinite;width:max-content}
+.ticker svg{height:20px;width:auto;opacity:.2;flex-shrink:0}
+@keyframes tickerScroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+@media(max-width:734px){
+.strip-a .logos,.strip-b .logos{gap:32px}
+.strip-a .logos svg,.strip-b .logos svg{height:16px}
+}
+
+.tag{display:inline-block;background:#1c1c1e;color:#55555f;font-size:11px;padding:4px 10px;border-radius:6px;margin-bottom:16px}
+</style>
+</head>
+<body>
+
+<span class="tag">Between Hero & Ventures</span>
+<h2>Option A - Minimal (just logos, lines above/below)</h2>
+<div class="strip-a">
+<div class="logos">
+<!-- DeLorean -->
+<svg viewBox="0 0 180 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="6">DELOREAN</text></svg>
+<!-- Lamborghini -->
+<svg viewBox="0 0 220 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="4">LAMBORGHINI</text></svg>
+<!-- University of Miami -->
+<svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">MIAMI</text></svg>
+<!-- Built In -->
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">BUILT IN</text></svg>
+<!-- Amazon -->
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">AMAZON</text></svg>
+</div>
+</div>
+
+<h2>Option B - With subtle label</h2>
+<div class="strip-b">
+<div class="label">Previously worked with</div>
+<div class="logos">
+<svg viewBox="0 0 180 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="6">DELOREAN</text></svg>
+<svg viewBox="0 0 220 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="4">LAMBORGHINI</text></svg>
+<svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">MIAMI</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">BUILT IN</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">AMAZON</text></svg>
+</div>
+</div>
+
+<h2>Option C - Scrolling ticker (auto-scrolls continuously)</h2>
+<div class="strip-c">
+<div class="ticker">
+<svg viewBox="0 0 180 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="6">DELOREAN</text></svg>
+<svg viewBox="0 0 220 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="4">LAMBORGHINI</text></svg>
+<svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">MIAMI</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">BUILT IN</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">AMAZON</text></svg>
+<!-- Duplicate for seamless loop -->
+<svg viewBox="0 0 180 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="6">DELOREAN</text></svg>
+<svg viewBox="0 0 220 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="900" font-size="18" fill="#eeeef0" letter-spacing="4">LAMBORGHINI</text></svg>
+<svg viewBox="0 0 100 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">MIAMI</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">BUILT IN</text></svg>
+<svg viewBox="0 0 120 24" fill="none" xmlns="http://www.w3.org/2000/svg"><text x="0" y="19" font-family="Inter,sans-serif" font-weight="800" font-size="16" fill="#eeeef0" letter-spacing="2">AMAZON</text></svg>
+</div>
+</div>
+
+</body>
+</html>
