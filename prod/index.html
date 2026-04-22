@@ -22,15 +22,19 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Daniel Bron - Entrepreneur, Operator, Investor">
 <meta name="twitter:description" content="Building since 12. Founder of Superposition Capital and Fulcrum. Miami, FL.">
-<meta property="og:image" content="https://bronventures.com/og-image.svg">
+<meta property="og:image" content="https://bronventures.com/og-image.png">
+<meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta name="twitter:image" content="https://bronventures.com/og-image.svg">
+<meta property="og:image:alt" content="Daniel Bron - Entrepreneur, Operator, Investor">
+<meta name="twitter:image" content="https://bronventures.com/og-image.png">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Daniel Bron">
 <meta name="geo.region" content="US-FL">
 <meta name="geo.placename" content="Miami">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<!-- Google Search Console verification — set BRONVENTURES_GSC_TOKEN and replace, or paste content directly -->
+<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -40,6 +44,15 @@
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Daniel Bron","url":"https://bronventures.com","description":"Personal website of Daniel Bron - entrepreneur, operator, and investor based in Miami, FL.","author":{"@id":"https://bronventures.com/#person"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Book","@id":"https://bronventures.com/#book-4ir","name":"The 4th Industrial Revolution","headline":"The 4th Industrial Revolution","alternateName":"4IR: Innovations in Decentralized Systems","author":{"@id":"https://bronventures.com/#person"},"datePublished":"2022","inLanguage":"en","about":["Artificial Intelligence","Blockchain","Fintech","Decentralized Systems"],"url":"https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7","image":"https://bronventures.com/uploads/81HCBIyrJVL._SL1500_.jpg","workExample":{"@type":"Book","@id":"https://bronventures.com/#book-4ir-kindle","bookFormat":"https://schema.org/EBook","isbn":"","potentialAction":{"@type":"ReadAction","target":"https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7"}}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","@id":"https://bronventures.com/#article-neuromorphic","headline":"Neuromorphic Computing - Expert Commentary","author":{"@id":"https://bronventures.com/#person"},"publisher":{"@type":"Organization","name":"Built In","url":"https://builtin.com"},"about":["Neuromorphic Computing","Artificial Intelligence","Hardware"],"url":"https://builtin.com/artificial-intelligence/neuromorphic-computing","mainEntityOfPage":"https://builtin.com/artificial-intelligence/neuromorphic-computing"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","@id":"https://bronventures.com/#ventures","name":"Ventures founded by Daniel Bron","itemListOrder":"https://schema.org/ItemListOrderAscending","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Organization","name":"Superposition Capital","url":"https://superpositioncap.com","description":"Seed fund investing in AI for regulated industries.","founder":{"@id":"https://bronventures.com/#person"}}},{"@type":"ListItem","position":2,"item":{"@type":"Organization","name":"Fulcrum","url":"https://askfulcrum.com","description":"Custom AI systems for operations teams in regulated industries.","founder":{"@id":"https://bronventures.com/#person"}}},{"@type":"ListItem","position":3,"item":{"@type":"Organization","name":"Solidity Law","url":"https://solidity.law","description":"Financial law, regulatory compliance, and technology law for the digital economy.","founder":{"@id":"https://bronventures.com/#person"}}},{"@type":"ListItem","position":4,"item":{"@type":"Organization","name":"Lavr International","url":"https://lavr-int.com","description":"Security consulting and logistical support.","founder":{"@id":"https://bronventures.com/#person"}}}]}
 </script>
 <style>
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -232,6 +245,9 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .bio-hero{margin-bottom:64px}
 .bio-hero h2{font-size:clamp(28px,4vw,48px);font-weight:900;letter-spacing:-.05em;line-height:1.1;color:#f5f5f7;-webkit-text-fill-color:#f5f5f7}
 .bio-hero h2 .muted{color:#3a3a3e;-webkit-text-fill-color:#3a3a3e}
+.bio-body a{color:#c5c5cb;-webkit-text-fill-color:#c5c5cb;border-bottom:1px solid rgba(37,99,235,.35);transition:border-color .2s,color .2s}
+.bio-body a:hover{color:#eeeef0;-webkit-text-fill-color:#eeeef0;border-bottom-color:#2563eb}
+.bio-body em{font-style:italic;color:#a1a1aa;-webkit-text-fill-color:#a1a1aa}
 .bio-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 @media(max-width:900px){.bio-grid{grid-template-columns:1fr;gap:48px}}
 .bio-body{font-size:15px;color:#71717a;-webkit-text-fill-color:#71717a;line-height:1.8;margin-bottom:20px}
@@ -350,7 +366,7 @@ footer p{font-size:11px;color:#2a2a30;-webkit-text-fill-color:#2a2a30;letter-spa
 <!-- ═══ HERO ═══ -->
 <section class="hero">
 <div class="hero-inner">
-<div class="hero-name">Daniel<br>Bron<span class="dot">.</span></div>
+<h1 class="hero-name">Daniel<br>Bron<span class="dot">.</span></h1>
 <div class="hero-data">
 <div class="hd-row"><span class="hd-label">Role</span><span class="hd-value">Entrepreneur, Operator, Investor</span></div>
 <div class="hd-row"><span class="hd-label">Based</span><span class="hd-value">Miami, FL</span></div>
@@ -498,9 +514,10 @@ footer p{font-size:11px;color:#2a2a30;-webkit-text-fill-color:#2a2a30;letter-spa
 </div>
 <div class="bio-grid">
 <div class="bio-text rv">
-<p class="bio-body">Daniel Bron launched his first venture at 12 and has spent over a decade building across marketing, design, development, fintech, AI, and emerging technology, with a consistent focus on execution that actually works.</p>
-<p class="bio-body">By his early 20s, he had already built, scaled, and exited companies, advised major brands and public institutions, and developed a reputation for operating where complexity, technology, and real-world execution meet. His work has included advising <strong>DeLorean</strong> and <strong>Ukraine’s Ministry of Digital Transformation</strong>.</p>
-<p class="bio-body">Today, Daniel leads <strong>Fulcrum</strong> and <strong>Superposition Capital</strong>, sitting at the intersection of strategic advisory, company building, and investment. He has spoken at the Javits Center and LA Convention Center, and worked with companies reaching multi-billion-dollar valuations.</p>
+<p class="bio-body">What I care about is the moment a technology stops being a demo and turns into something a regulated institution can actually run on. That gap is where most of the interesting work in AI is hiding, and it’s where I’ve spent most of the last decade.</p>
+<p class="bio-body">I’m a Partner at <a href="https://superpositioncap.com" target="_blank" rel="noopener"><strong>Superposition Capital</strong></a>, a seed fund investing in AI built for regulated industries, and the founder of <a href="https://askfulcrum.com" target="_blank" rel="noopener"><strong>Fulcrum</strong></a>, where we build custom AI systems for operations teams that can’t afford for automation to break. I also serve as technical advisor to <a href="https://solidity.law" target="_blank" rel="noopener"><strong>Solidity Law</strong></a>, a compliance and technology practice for the digital economy, and to <a href="https://lavr-int.com" target="_blank" rel="noopener"><strong>Lavr International</strong></a>, a security and logistics firm.</p>
+<p class="bio-body">Over the last decade I’ve worked with <strong>DeLorean</strong>, <strong>Ukraine’s Ministry of Digital Transformation</strong>, and <strong>Lamborghini</strong> leadership, was a <strong>Thiel Fellowship</strong> finalist, and wrote a book about the infrastructure underneath all this called <a href="https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7" target="_blank" rel="noopener"><em>The 4th Industrial Revolution</em></a>. Based in Miami.</p>
+<p class="bio-body">If you’re building something <em>real</em> in that gap, <a href="https://cal.com/daniel-bron-lfpkai" target="_blank" rel="noopener">the call button</a> is at the top.</p>
 </div>
 <div class="bio-aside rv" style="transition-delay:.15s">
 <div class="timeline">
