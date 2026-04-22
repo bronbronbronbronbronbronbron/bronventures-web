@@ -40,7 +40,7 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","@id":"https://bronventures.com/#person","name":"Daniel Bron","alternateName":["Dan Bron","Daniel J. Bron"],"givenName":"Daniel","familyName":"Bron","description":"Founder of Fulcrum, Partner at Superposition Capital. Working in the gap where AI stops being a demo and starts being something a regulated institution can actually run on.","url":"https://bronventures.com","image":"https://bronventures.com/icon-512.png","sameAs":["https://linkedin.com/in/dbron","https://instagram.com/broninc","https://superpositioncap.com","https://askfulcrum.com","https://solidity.law","https://lavr-int.com","https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7","https://builtin.com/artificial-intelligence/neuromorphic-computing","https://www.amazon.com/author/bron"],"alumniOf":[{"@type":"EducationalOrganization","name":"University of Miami","url":"https://www.miami.edu"}],"award":["Peter Thiel Fellow Finalist","Recognized by President Julio Frenk in State of the U Speech"],"worksFor":[{"@type":"Organization","name":"Superposition Capital","url":"https://superpositioncap.com","description":"Seed fund investing in AI for regulated industries"},{"@type":"Organization","name":"Fulcrum","url":"https://askfulcrum.com","description":"AI operations advisory"}],"founder":[{"@type":"Organization","name":"Superposition Capital","url":"https://superpositioncap.com"},{"@type":"Organization","name":"Fulcrum","url":"https://askfulcrum.com"},{"@type":"Organization","name":"Solidity Law","url":"https://solidity.law"},{"@type":"Organization","name":"Lavr International","url":"https://lavr-int.com"},{"@type":"Organization","name":"Bron Law"}],"knowsAbout":["Artificial Intelligence","Venture Capital","Legal Technology","Blockchain","Financial Technology","Operations Automation","Regulated Industries","Seed Investing"],"knowsLanguage":["en","ru"],"nationality":{"@type":"Country","name":"United States"},"address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"},"author":{"@type":"Book","name":"The 4th Industrial Revolution","url":"https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7"}}
+{"@context":"https://schema.org","@type":"Person","@id":"https://bronventures.com/#person","name":"Daniel Bron","alternateName":["Dan Bron","Daniel J. Bron"],"givenName":"Daniel","familyName":"Bron","description":"Founder of Fulcrum, Partner at Superposition Capital. Working in the gap where AI stops being a demo and starts being something a regulated institution can actually run on.","url":"https://bronventures.com","image":"https://bronventures.com/icon-512.png","sameAs":["https://linkedin.com/in/dbron","https://instagram.com/broninc","https://superpositioncap.com","https://askfulcrum.com","https://solidity.law","https://lavr-int.com","https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7","https://builtin.com/artificial-intelligence/neuromorphic-computing","https://www.amazon.com/author/bron"],"alumniOf":[{"@type":"EducationalOrganization","name":"University of Miami","url":"https://www.miami.edu"}],"award":["Peter Thiel Fellow Finalist","Recognized by President Julio Frenk in State of the U Speech"],"worksFor":[{"@type":"Organization","name":"Superposition Capital","url":"https://superpositioncap.com","description":"Seed fund investing in AI for regulated industries"},{"@type":"Organization","name":"Fulcrum","url":"https://askfulcrum.com","description":"AI operations advisory"}],"founder":[{"@type":"Organization","name":"Superposition Capital","url":"https://superpositioncap.com"},{"@type":"Organization","name":"Fulcrum","url":"https://askfulcrum.com"},{"@type":"Organization","name":"Solidity Law","url":"https://solidity.law"},{"@type":"Organization","name":"Lavr International","url":"https://lavr-int.com"}],"knowsAbout":["Artificial Intelligence","Venture Capital","Legal Technology","Blockchain","Financial Technology","Operations Automation","Regulated Industries","Seed Investing"],"knowsLanguage":["en","ru"],"nationality":{"@type":"Country","name":"United States"},"address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL","addressCountry":"US"},"author":{"@type":"Book","name":"The 4th Industrial Revolution","url":"https://www.amazon.com/4th-Industrial-Revolution-Innovations-Decentralized-ebook/dp/B0C7SLFDY7"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Daniel Bron","url":"https://bronventures.com","description":"Personal website of Daniel Bron — founder of Fulcrum and partner at Superposition Capital. Based in Miami, FL.","author":{"@id":"https://bronventures.com/#person"}}
@@ -147,7 +147,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 /* ═══ SECTION 4: VENTURES - ASYMMETRIC BENTO ═══ */
 .ventures{padding:100px 0}
 @media(max-width:734px){.ventures{padding:48px 0}}
-.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:280px 220px;gap:6px}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 220px;gap:6px}
 @media(max-width:900px){.bento{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}}
 @media(max-width:580px){.bento{grid-template-columns:1fr;grid-template-rows:auto}}
 /* ─── Base tile ─── */
@@ -168,8 +168,8 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .bt-desc{font-size:12px;color:#52525b;-webkit-text-fill-color:#52525b;line-height:1.6;position:relative;z-index:2}
 .bt-url{font-size:11px;font-weight:700;color:#2563eb;-webkit-text-fill-color:#2563eb;margin-top:12px;display:inline-flex;align-items:center;gap:6px;transition:gap .4s cubic-bezier(.22,1,.36,1);position:relative;z-index:2;letter-spacing:.3px}
 .bt:hover .bt-url{gap:10px}
-/* ─── Superposition: spans 3 cols ─── */
-.bt--spc{grid-column:span 3}
+/* ─── Superposition: spans 2 cols ─── */
+.bt--spc{grid-column:span 2}
 .bt--spc::before{background:radial-gradient(ellipse at 70% 20%,rgba(37,99,235,.08),transparent 65%)}
 .bt--spc .bt-logo{height:48px}
 .bt--spc .bt-logo img{height:44px;filter:brightness(2)}
@@ -180,14 +180,14 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 @media(max-width:900px){.bt--spc{grid-column:span 2}}
 @media(max-width:580px){.bt--spc{grid-column:span 1}}
 /* ─── Fulcrum: spans 2 rows ─── */
-.bt--ful{grid-column:4;grid-row:1 / span 2}
+.bt--ful{grid-column:3;grid-row:1 / span 2}
 .bt--ful::before{background:radial-gradient(ellipse at 50% 25%,rgba(99,102,241,.08),transparent 60%)}
 .bt--ful .bt-logo{height:48px}
 .bt--ful .bt-logo-text{font-size:34px;line-height:48px}
 .bt--ful .bt-logo-text i{color:#2563eb;-webkit-text-fill-color:#2563eb}
 @media(max-width:900px){.bt--ful{grid-column:span 1;grid-row:span 1}}
 /* ─── Bottom row: align titles ─── */
-.bt--sol .bt-desc,.bt--lavr .bt-desc,.bt--blaw .bt-desc{min-height:56px}
+.bt--sol .bt-desc,.bt--lavr .bt-desc{min-height:56px}
 /* ─── Solidity ─── */
 .bt--sol::before{background:radial-gradient(ellipse at 30% 60%,rgba(59,130,246,.06),transparent 55%)}
 .bt--sol .bt-logo img{height:32px;filter:brightness(1.6)}
@@ -196,13 +196,7 @@ body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;o
 .bt--lavr::before{background:radial-gradient(ellipse at 60% 40%,rgba(196,196,196,.05),transparent 55%)}
 .bt--lavr .bt-logo img{height:24px;filter:brightness(2)}
 .bt--lavr:hover .bt-logo img{filter:brightness(2.5)}
-/* ─── Bron Law ─── */
-.bt--blaw::before{background:radial-gradient(ellipse at 50% 50%,rgba(37,99,235,.04),transparent 55%)}
-.bt--blaw .bt-logo-text{font-size:22px;font-weight:900;color:#55555f;-webkit-text-fill-color:#55555f;letter-spacing:-.01em}
-.bt-status{font-size:10px;font-weight:800;color:#2563eb;-webkit-text-fill-color:#2563eb;letter-spacing:1.5px;text-transform:uppercase;margin-top:12px;display:inline-flex;align-items:center;gap:8px;position:relative;z-index:2}
-.bt-status::before{content:'';width:5px;height:5px;border-radius:50%;background:#2563eb;animation:statusPulse 2.5s ease-in-out infinite}
-@keyframes statusPulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
-@keyframes comingPulse{0%,100%{opacity:.3;transform:scale(.8)}50%{opacity:1;transform:scale(1.2)}}
+@media(max-width:900px){.bt--lavr{grid-column:span 2}}
 
 /* ═══ SECTION 5: FEATURED ═══ */
 .featured{padding:100px 0}
@@ -441,14 +435,6 @@ footer p{font-size:11px;color:#2a2a30;-webkit-text-fill-color:#2a2a30;letter-spa
 <div class="bt-desc">Security consulting and logistical support. Coast to coast and beyond.</div>
 <div class="bt-url">lavr-int.com  &#8594;</div>
 </a>
-
-<!-- Bron Law: coming soon -->
-<div class="bt bt--blaw rvs" style="cursor:default">
-<div class="bt-logo"><div class="bt-logo-text">Bron Law</div></div>
-<div class="bt-spacer"></div><div class="bt-name">Bron Law</div>
-<div class="bt-desc">Full-service legal practice. Coming soon.</div>
-<div class="bt-status">Coming Soon</div>
-</div>
 </div>
 </div>
 </section>
@@ -520,12 +506,12 @@ footer p{font-size:11px;color:#2a2a30;-webkit-text-fill-color:#2a2a30;letter-spa
 </div>
 <div class="bio-aside rv" style="transition-delay:.15s">
 <div class="timeline">
-<div class="tl-item"><div class="tl-year">2025</div><div class="tl-text">Superposition Capital launched.</div></div>
-<div class="tl-item"><div class="tl-year">2024</div><div class="tl-text">UM honors graduate.</div></div>
-<div class="tl-item"><div class="tl-year">2023</div><div class="tl-text">Fulcrum founded.</div></div>
-<div class="tl-item"><div class="tl-year">2022</div><div class="tl-text">Published book. Solidity Law. Thiel Fellow finalist.</div></div>
-<div class="tl-item"><div class="tl-year">2021</div><div class="tl-text">First exit.</div></div>
-<div class="tl-item"><div class="tl-year">2020</div><div class="tl-text">DeLorean, Lamborghini. $2.2B+ valuations.</div></div>
+<div class="tl-item"><div class="tl-year">2025</div><div class="tl-text">Superposition Capital launched. UM honors graduate.</div></div>
+<div class="tl-item"><div class="tl-year">2024</div><div class="tl-text">Thiel Fellow finalist.</div></div>
+<div class="tl-item"><div class="tl-year">2023</div><div class="tl-text">Fulcrum founded. Lamborghini. First exit.</div></div>
+<div class="tl-item"><div class="tl-year">2022</div><div class="tl-text">DeLorean. Published book. Solidity Law. Ukraine Ministry.</div></div>
+<div class="tl-item"><div class="tl-year">2021</div><div class="tl-text">Grew into dev + design. $2.2B+ combined client market caps.</div></div>
+<div class="tl-item"><div class="tl-year">2020</div><div class="tl-text">Moved into marketing.</div></div>
 <div class="tl-item"><div class="tl-year">2016</div><div class="tl-text">First celebrity client at 14.</div></div>
 <div class="tl-item"><div class="tl-year">2014</div><div class="tl-text">First venture at 12.</div></div>
 </div>
